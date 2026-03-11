@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
+
+  print('Hello, World!');
 }
 
 class MyApp extends StatelessWidget {
@@ -11,9 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primaryColor: Colors.blue,
-      ),
+      theme: ThemeData(primaryColor: Colors.blue),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -21,8 +21,6 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
-
 
   final String title;
 
@@ -32,22 +30,15 @@ class MyHomePage extends StatefulWidget {
 
 //create a function to sum two integers
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
-   
     return Scaffold(
       appBar: AppBar(
-       
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-      
-        title: Text(widget.title),
-        
-      ),
-      body: Center(
 
+        title: Text(widget.title),
       ),
-      
+      body: Center(),
     );
   }
 }
