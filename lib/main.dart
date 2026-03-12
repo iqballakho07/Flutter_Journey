@@ -12,9 +12,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Container',
       theme: ThemeData(primaryColor: Colors.blue),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Flutter Container Example'),
     );
   }
 }
@@ -38,7 +38,24 @@ class _MyHomePageState extends State<MyHomePage> {
 
         title: Text(widget.title),
       ),
-      body: Center(),
+      // body: Container(
+
+      //   color : Colors.blue,
+      //   // child: Text("Hello welcome to flutter"),
+      //   alignment: Alignment.center,
+      //   child : Container(
+      //     width: 400,
+      //     height: 220,
+      //     padding: EdgeInsets.all(10),
+      //     margin: EdgeInsets.all(20),
+      //     decoration: BoxDecoration(
+      //       color: const Color.fromARGB(255, 22, 247, 120),
+      //       borderRadius: BorderRadius.circular(10),
+      //     ),
+      //     alignment: Alignment.center,
+      //     child: Text("This is Muhammad Iqbal"),
+      //   )
+      // ),
     );
   }
 }
