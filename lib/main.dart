@@ -74,12 +74,13 @@ class _MyHomePageState extends State<MyHomePage> {
       //   },
       //   child: Text("Click Me"),
       // ),
-      body: OutlinedButton(
-        onPressed: () {
-          print("Hello world 44");
-        },
-        child: Text("click me"),
-      ),
+      // body: OutlinedButton(
+      //   onPressed: () {
+      //     print("Hello world 44");
+      //   },
+      //   child: Text("click me"),
+      // ),
+      body : Image.asset("assets/images/pic.jpg")
     );
   }
 }
