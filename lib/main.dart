@@ -29,6 +29,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var arr = {"Babar", "Rizwan", "Smith", "Kohli", "Kane williamson"};
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,23 +39,38 @@ class _MyHomePageState extends State<MyHomePage> {
 
         title: Text(widget.title),
       ),
-      // body: Container(
-      //   color: Colors.blue,
-      //   // child: Text("Hello welcome to flutter"),
-      //   alignment: Alignment.center,
-      //   child: Container(
-      //     width: 400,
-      //     height: 220,
-      //     padding: EdgeInsets.all(10),
-      //     margin: EdgeInsets.all(20),
-      //     decoration: BoxDecoration(
-      //       color: const Color.fromARGB(255, 22, 247, 120),
-      //       borderRadius: BorderRadius.circular(10),
-      //     ),
-      //     alignment: Alignment.center,
-      //     child: Text("This is Muhammad Iqbal"),
-      //   ),
-      // ),
+      body: Container(
+        color: Colors.blue,
+        // child: Text("Hello welcome to flutter"),
+        alignment: Alignment.center,
+        child: Container(
+          width: 400,
+          height: 220,
+          // padding: EdgeInsets.all(10),
+          // margin: EdgeInsets.all(20),
+          decoration: BoxDecoration(
+            color: const Color.fromARGB(255, 22, 247, 120),
+            // borderRadius: BorderRadius.only(topLeft:Radius.circular(100),bottomRight: Radius.circular(100)),
+            border: Border.all(
+              color: Colors.white,
+              width: 5 
+            ),
+            boxShadow:[
+               BoxShadow(
+                blurRadius: 11,
+                spreadRadius: 10,
+                color: Colors.black
+
+              ),
+            ],
+            shape: BoxShape.circle,
+
+          ),
+          
+          alignment: Alignment.center,
+          child: Text("This is Muhammad Iqbal"),
+        ),
+      ),
       // body : Text('Hello flutter developers', style : TextStyle(
       //   fontSize: 20,
       //   color: Colors.white,
@@ -105,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ],
       // ),
 
-      //small ui 
+      //small ui
       // body: Center(
       //   child: Container(
       //     height: 500,
@@ -139,7 +155,7 @@ class _MyHomePageState extends State<MyHomePage> {
       //         Container(
       //           // padding: EdgeInsets.all(20),
       //           padding: EdgeInsets.only(left: 20, top: 20, right: 20, bottom: 10),
-                
+
       //           child: Text("Hi, This is Muhammad Iqbal . I am undergradute student at Mehran university Jamshoro currently learning flutter ",
       //               style: TextStyle(
       //                 fontWeight: FontWeight.bold
@@ -173,19 +189,90 @@ class _MyHomePageState extends State<MyHomePage> {
       //             Image.asset("assets/images/rating.png",width: 20,height: 20,fit:BoxFit.fill),
       //           ],
       //         )
-      //         )   
+      //         )
       //       ],
       //     ),
       //   ),
       // ),
-      body : InkWell(
-        onTap: () => print("Tapped"),
-        child : Container(
-        width: 200,
-        height: 200,
-        color: Colors.blue,
-      )
-      )
+      // body : InkWell(
+      //   onTap: () => print("Tapped"),
+      //   child : Container(
+      //   width: 200,
+      //   height: 200,
+      //   color: Colors.blue,
+      // )
+      // )
+      // Scroll View
+      // body: SingleChildScrollView(
+      //   child: Column(
+      //     children: [
+      //       SingleChildScrollView(
+      //         scrollDirection: Axis.horizontal,
+      //         child: Row(
+      //           children:[
+      //              Container(
+      //             height: 200,
+      //             width: 400,
+      //             margin: EdgeInsets.only(right: 10),
+      //             color: const Color.fromARGB(255, 96, 139, 103),
+      //           ),
+      //           Container(
+      //             height: 200,
+      //             width: 400,
+      //             margin: EdgeInsets.only(right: 10),
+      //             color: const Color.fromARGB(255, 240, 206, 14),
+      //           ),
+      //           Container(
+      //             height: 200,
+      //             margin: EdgeInsets.only(right: 10),
+      //             color: const Color.fromARGB(255, 239, 118, 5),
+      //             width: 400,
+      //           ),
+      //           Container(
+      //             height: 200,
+      //             margin: EdgeInsets.only(right: 10),
+      //             color: const Color.fromARGB(255, 245, 25, 183),
+      //             width: 400,
+      //           )
+      //           ]
+      //         ),
+      //       ),
+      //       Container(
+      //         height: 200,
+      //         margin: EdgeInsets.only(bottom: 10),
+      //         color: const Color.fromARGB(255, 100, 192, 238),
+      //       ),
+      //       Container(
+      //         height: 200,
+      //         margin: EdgeInsets.only(bottom: 10),
+      //         color: const Color.fromARGB(255, 117, 210, 125),
+      //       ),
+      //       Container(
+      //         height: 200,
+      //         margin: EdgeInsets.only(bottom: 10),
+      //         color: const Color.fromARGB(255, 238, 80, 219),
+      //       )
+      //     ],
+      //   ),
+      // ),
+      // List View
+      // body: Container(
+      //   width: 150,
+      //   height: 100,
+      //   margin: EdgeInsets.all(10),
+      //   decoration: BoxDecoration(
+      //     borderRadius: BorderRadius.circular(10),
+      //     color: Colors.blue,
+      //   ),
+      //   child: ListView.separated(itemBuilder: (context, index) {
+      //     return Text(arr.elementAt(index),style: TextStyle(fontSize: 21,fontWeight: FontWeight.bold),);
+      //   },
+      //   itemCount: arr.length,
+      //   separatorBuilder: (context, index) => Divider(height: 4,),
+      //   // reverse: true,
+      //   // scrollDirection: Axis.horizontal,
+      //   ),
+      // ),
     );
   }
 }
