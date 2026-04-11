@@ -12,9 +12,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Container',
+      title: 'Contacts',
       theme: ThemeData(primaryColor: Colors.blue),
-      home: const MyHomePage(title: 'Flutter '),
+      home: const MyHomePage(title: 'Contacts'),
     );
   }
 }
@@ -29,7 +29,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var arr = {"Babar", "Rizwan", "Smith", "Kohli", "Kane williamson"};
+  var arr = {"Iqbal", "Sarang", "Ali", "Ahmed", "Mushtaque", "Iqbal New Lakho","Sarang New Junejo","Sher","MB","My Incomplete love"};
+  var arr2 = {"assets/images/Iqbal.jpeg","assets/images/Sarang.jpeg","assets/images/Ali.jpeg","assets/images/Ahmed.jpeg","assets/images/Mushtaque.jpeg","assets/images/Iqbal2.jpeg","assets/images/sarang2.jpeg","assets/images/sher.jpeg","assets/images/MB.jpeg","assets/images/girl.jpeg"};
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,38 +40,38 @@ class _MyHomePageState extends State<MyHomePage> {
 
         title: Text(widget.title),
       ),
-      body: Container(
-        color: Colors.blue,
-        // child: Text("Hello welcome to flutter"),
-        alignment: Alignment.center,
-        child: Container(
-          width: 400,
-          height: 220,
-          // padding: EdgeInsets.all(10),
-          // margin: EdgeInsets.all(20),
-          decoration: BoxDecoration(
-            color: const Color.fromARGB(255, 22, 247, 120),
-            // borderRadius: BorderRadius.only(topLeft:Radius.circular(100),bottomRight: Radius.circular(100)),
-            border: Border.all(
-              color: Colors.white,
-              width: 5 
-            ),
-            boxShadow:[
-               BoxShadow(
-                blurRadius: 11,
-                spreadRadius: 10,
-                color: Colors.black
+      // body: Container(
+      //   color: Colors.blue,
+      //   // child: Text("Hello welcome to flutter"),
+      //   alignment: Alignment.center,
+      //   child: Container(
+      //     width: 400,
+      //     height: 220,
+      //     // padding: EdgeInsets.all(10),
+      //     // margin: EdgeInsets.all(20),
+      //     decoration: BoxDecoration(
+      //       color: const Color.fromARGB(255, 22, 247, 120),
+      //       // borderRadius: BorderRadius.only(topLeft:Radius.circular(100),bottomRight: Radius.circular(100)),
+      //       border: Border.all(
+      //         color: Colors.white,
+      //         width: 5
+      //       ),
+      //       boxShadow:[
+      //          BoxShadow(
+      //           blurRadius: 11,
+      //           spreadRadius: 10,
+      //           color: Colors.black
 
-              ),
-            ],
-            shape: BoxShape.circle,
+      //         ),
+      //       ],
+      //       shape: BoxShape.circle,
 
-          ),
-          
-          alignment: Alignment.center,
-          child: Text("This is Muhammad Iqbal"),
-        ),
-      ),
+      //     ),
+
+      //     alignment: Alignment.center,
+      //     child: Text("This is Muhammad Iqbal"),
+      //   ),
+      // ),
       // body : Text('Hello flutter developers', style : TextStyle(
       //   fontSize: 20,
       //   color: Colors.white,
@@ -273,6 +274,88 @@ class _MyHomePageState extends State<MyHomePage> {
       //   // scrollDirection: Axis.horizontal,
       //   ),
       // ),
+      //Expanded widget
+      // body:Row(
+      //   children:
+      //   [
+      //     Expanded(
+      //       flex: 2,
+      //       child: Container
+      //     (
+      //     height: 200,
+      //     color: Colors.blueGrey,
+
+      //   )),
+      //   Expanded(
+      //     flex:3,
+      //     child: Container(
+      //     height: 200,
+      //     color: const Color.fromARGB(255, 71, 145, 182),
+      //   )),
+      //   ]
+      // )
+      body: ListView.separated(
+        itemBuilder: (context, Index) {
+          var path = arr2.elementAt(Index);
+          return ListTile(
+             onTap: () {
+              _showSimOptions(context);
+            },
+            leading: Container(
+              height: 50,
+              width: 50,
+              child: CircleAvatar(  
+                backgroundImage: AssetImage(path),
+              ),
+            ),
+            title: Text(arr.elementAt(Index)),
+            subtitle: Text("03093196901"),
+            trailing: Icon(Icons.add),
+          );
+        },
+        itemCount: arr.length,
+        separatorBuilder: (context, Index) => Divider(height: 8),
+      ),
+      
+    );
+    
+  }
+    void _showSimOptions(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return Container(
+          padding: EdgeInsets.all(16),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                "Choose SIM",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 10),
+
+              ListTile(
+                leading: Icon(Icons.sim_card),
+                title: Text("SIM 1"),
+                onTap: () {
+                  Navigator.pop(context);
+                  print("SIM 1 selected");
+                },
+              ),
+
+              ListTile(
+                leading: Icon(Icons.sim_card),
+                title: Text("SIM 2"),
+                onTap: () {
+                  Navigator.pop(context);
+                  print("SIM 2 selected");
+                },
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }
