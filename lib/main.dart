@@ -308,7 +308,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 backgroundImage: AssetImage(path),
               ),
             ),
-            title: Text(arr.elementAt(Index)),
+            title: Text(arr.elementAt(Index),style: TextStyle(fontFamily: 'myfonts'),),
             subtitle: Text("03093196901"),
             trailing: Icon(Icons.add),
           );
