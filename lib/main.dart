@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,11 +16,11 @@ class MyApp extends StatelessWidget {
       title: 'Contacts',
       theme: ThemeData(
         primaryColor: Colors.blue,
-        textTheme: TextTheme(
-          headlineLarge: TextStyle(fontSize: 20,fontFamily: 'myfonts'),
-          titleSmall: TextStyle(fontSize: 10,fontFamily: 'myfonts2')
-        )
-        ),
+        // textTheme: TextTheme(
+        //   headlineLarge: TextStyle(fontSize: 20,fontFamily: 'myfonts'),
+        //   titleSmall: TextStyle(fontSize: 10,fontFamily: 'myfonts2')
+        // )
+      ),
       home: const MyHomePage(title: 'Contacts'),
     );
   }
@@ -35,10 +36,19 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var arr = {"Iqbal", "Sarang", "Ali", "Ahmed", "Mushtaque", "Iqbal New Lakho","Sarang New Junejo","Sher","MB","My Incomplete love"};
-  var arr2 = {"assets/images/Iqbal.jpeg","assets/images/Sarang.jpeg","assets/images/Ali.jpeg","assets/images/Ahmed.jpeg","assets/images/Mushtaque.jpeg","assets/images/Iqbal2.jpeg","assets/images/sarang2.jpeg","assets/images/sher.jpeg","assets/images/MB.jpeg","assets/images/girl.jpeg"};
+  // var arr = {"Iqbal", "Sarang", "Ali", "Ahmed", "Mushtaque", "Iqbal New Lakho","Sarang New Junejo","Sher","MB","My Incomplete love"};
+  // var arr2 = {"assets/images/Iqbal.jpeg","assets/images/Sarang.jpeg","assets/images/Ali.jpeg","assets/images/Ahmed.jpeg","assets/images/Mushtaque.jpeg","assets/images/Iqbal2.jpeg","assets/images/sarang2.jpeg","assets/images/sher.jpeg","assets/images/MB.jpeg","assets/images/girl.jpeg"};
   @override
   Widget build(BuildContext context) {
+    var date_time = DateTime.now();
+    var date = {
+      Text("Day : ${date_time.day}"),
+      Text("Month : ${date_time.month}"),
+      Text("Year : ${date_time.year}"),
+      Text(
+        "Time : ${date_time.hour} : ${date_time.minute} : ${date_time.second} ",
+      ),
+    };
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -313,7 +323,7 @@ class _MyHomePageState extends State<MyHomePage> {
       //         leading: Container(
       //           height: 50,
       //           width: 50,
-      //           child: CircleAvatar(  
+      //           child: CircleAvatar(
       //             backgroundImage: AssetImage(path),
       //           ),
       //         ),
@@ -327,109 +337,126 @@ class _MyHomePageState extends State<MyHomePage> {
       //   separatorBuilder: (context, Index) => Divider(height: 8),
       // ),
       // card ui design
-      body: Container(
-        // color: Colors.blueGrey,
-        child: Center(
-          child: Card(
-            elevation: 40,
-            child: Container(
-              width: 470,
-              height: 250,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: Colors.black,width: 2),
-                color: Colors.black,
-              ),
-              child: Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(5),
-                    child: Material(
-                      elevation: 5,
-                      shadowColor: Colors.white,
-                      shape: CircleBorder(),
-                      child: CircleAvatar(
-                        backgroundImage: AssetImage('assets/images/pic.jpg'),
-                        radius: 80,
-                      ),
-                    ),
-                  ),
-                   Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.only(top:7,left: 7,right: 5,bottom: 5),
-                        child: Column(
-                          // mainAxisAlignment: MainAxisAlignment.values[2],
-                          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Card(
-                              elevation: 5,
-                              color: Colors.black,
-                              shadowColor: Colors.white,
-                              child: Padding(
-                                padding: const EdgeInsets.all(5.0),
-                                child: Text("Name : Muhammad Iqbal",style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),),
-                              )),
-                               Card(
-                              elevation: 5,
-                              color: Colors.black,
-                              shadowColor: Colors.white,
-                              child: Padding(
-                                padding: const EdgeInsets.all(5.0),
-                                // child: Text("Department : \u00A0\u00A0Software \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Engineering",style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),),                       
-                                 child: Row(
-                                  children: [
-                                    Text("Department :     ",style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),),
-                                    Column(
-                                      children: [
-                                        Text("Software",style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),),
-                                        Text("Engineering",style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),),
-                                      ],
-                                    ),
-                                  ],
-                                  )
-                                
-                                      )),
-                                
-                            Card(
-                              elevation: 5,
-                              color: Colors.black,
-                              shadowColor: Colors.white,
-                              child: Padding(
-                                padding: const EdgeInsets.all(5.0),
-                                child: Text("Year/Semester : 3rd/6th",style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),),
-                                ),
-                              ),
-                            Card(
-                              elevation: 5,
-                              color: Colors.black,
-                              shadowColor: Colors.white,
-                              child: Padding(
-                                padding: const EdgeInsets.all(5.0),
-                                child: Text("University : Mehran university of Engineering and Technology Jamshoro",softWrap: true,style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),),
-                              )),
-                            Card(
-                              elevation: 5,
-                              color: Colors.black,
-                              shadowColor: Colors.white,
-                              child: Padding(
-                                padding: const EdgeInsets.all(5.0),
-                                child: Text("Current_Skill : Flutter(App Developement)",style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),)
-                              ))
-                          ],
-                        ),
-                      ),
-                    
-                  )
-                ],
-              ),
-            ),
-          ),
-        ),
-      ),
-      
+      // body: Container(
+      //   // color: Colors.blueGrey,
+      //   child: Center(
+      //     child: Card(
+      //       elevation: 40,
+      //       child: Container(
+      //         width: 470,
+      //         height: 250,
+      //         decoration: BoxDecoration(
+      //           borderRadius: BorderRadius.circular(20),
+      //           border: Border.all(color: Colors.black,width: 2),
+      //           color: Colors.black,
+      //         ),
+      //         child: Row(
+      //           children: [
+      //             Padding(
+      //               padding: EdgeInsets.all(5),
+      //               child: Material(
+      //                 elevation: 5,
+      //                 shadowColor: Colors.white,
+      //                 shape: CircleBorder(),
+      //                 child: CircleAvatar(
+      //                   backgroundImage: AssetImage('assets/images/pic.jpg'),
+      //                   radius: 80,
+      //                 ),
+      //               ),
+      //             ),
+      //              Expanded(
+      //                 child: Padding(
+      //                   padding: const EdgeInsets.only(top:7,left: 7,right: 5,bottom: 5),
+      //                   child: Column(
+      //                     // mainAxisAlignment: MainAxisAlignment.values[2],
+      //                     // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      //                     crossAxisAlignment: CrossAxisAlignment.start,
+      //                     children: [
+      //                       Card(
+      //                         elevation: 5,
+      //                         color: Colors.black,
+      //                         shadowColor: Colors.white,
+      //                         child: Padding(
+      //                           padding: const EdgeInsets.all(5.0),
+      //                           child: Text("Name : Muhammad Iqbal",style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),),
+      //                         )),
+      //                          Card(
+      //                         elevation: 5,
+      //                         color: Colors.black,
+      //                         shadowColor: Colors.white,
+      //                         child: Padding(
+      //                           padding: const EdgeInsets.all(5.0),
+      //                           // child: Text("Department : \u00A0\u00A0Software \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Engineering",style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),),
+      //                            child: Row(
+      //                             children: [
+      //                               Text("Department :     ",style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),),
+      //                               Column(
+      //                                 children: [
+      //                                   Text("Software",style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),),
+      //                                   Text("Engineering",style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),),
+      //                                 ],
+      //                               ),
+      //                             ],
+      //                             )
+
+      //                                 )),
+
+      //                       Card(
+      //                         elevation: 5,
+      //                         color: Colors.black,
+      //                         shadowColor: Colors.white,
+      //                         child: Padding(
+      //                           padding: const EdgeInsets.all(5.0),
+      //                           child: Text("Year/Semester : 3rd/6th",style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),),
+      //                           ),
+      //                         ),
+      //                       Card(
+      //                         elevation: 5,
+      //                         color: Colors.black,
+      //                         shadowColor: Colors.white,
+      //                         child: Padding(
+      //                           padding: const EdgeInsets.all(5.0),
+      //                           child: Text("University : Mehran university of Engineering and Technology Jamshoro",softWrap: true,style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),),
+      //                         )),
+      //                       Card(
+      //                         elevation: 5,
+      //                         color: Colors.black,
+      //                         shadowColor: Colors.white,
+      //                         child: Padding(
+      //                           padding: const EdgeInsets.all(5.0),
+      //                           child: Text("Current_Skill : Flutter(App Developement)",style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),)
+      //                         ))
+      //                     ],
+      //                   ),
+      //                 ),
+
+      //             )
+      //           ],
+      //         ),
+      //       ),
+      //     ),
+      //   ),
+      // ),
+      //current date and time
+      // body: ListView.separated(
+      //   itemBuilder: (context, index) {
+      //     return date.elementAt(index);
+      //   },
+      //   scrollDirection: Axis.horizontal,
+      //   itemCount: 4,
+      //   separatorBuilder: (context, index) => VerticalDivider(width: 20),
+      // ),
+      //DateFormat
+      // body: Column(
+      //   children: [
+      //     Text("current time : ${DateFormat('Hms').format(date_time)} "),
+      //     Text("current time : ${DateFormat('jms').format(date_time)} "),
+      //     Text("Day          : ${DateFormat('EEEE').format(date_time)} "),
+      //     Text("current Date : ${DateFormat('dMMMMy').format(date_time)} "),
+      //     Text("current Quarter : ${DateFormat('QQQQ').format(date_time)} ")
+      //   ],
+      // ),
     );
-    
   }
   //   void _showSimOptions(BuildContext context) {
   //   showModalBottomSheet(
