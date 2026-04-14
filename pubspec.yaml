@@ -77,6 +77,9 @@ flutter:
     - family: myfonts
       fonts:
         - asset: assets/fonts/BitcountGridDouble-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf
+    - family: myfonts2
+      fonts:
+        - asset: assets/fonts/Sekuya-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
