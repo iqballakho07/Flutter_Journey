@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 
 void main() {
@@ -38,17 +39,19 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   // var arr = {"Iqbal", "Sarang", "Ali", "Ahmed", "Mushtaque", "Iqbal New Lakho","Sarang New Junejo","Sher","MB","My Incomplete love"};
   // var arr2 = {"assets/images/Iqbal.jpeg","assets/images/Sarang.jpeg","assets/images/Ali.jpeg","assets/images/Ahmed.jpeg","assets/images/Mushtaque.jpeg","assets/images/Iqbal2.jpeg","assets/images/sarang2.jpeg","assets/images/sher.jpeg","assets/images/MB.jpeg","assets/images/girl.jpeg"};
+  var email = TextEditingController();
+  var password = TextEditingController();
   @override
   Widget build(BuildContext context) {
     var date_time = DateTime.now();
-    var date = {
-      Text("Day : ${date_time.day}"),
-      Text("Month : ${date_time.month}"),
-      Text("Year : ${date_time.year}"),
-      Text(
-        "Time : ${date_time.hour} : ${date_time.minute} : ${date_time.second} ",
-      ),
-    };
+    // var date = {
+    //   Text("Day : ${date_time.day}"),
+    //   Text("Month : ${date_time.month}"),
+    //   Text("Year : ${date_time.year}"),
+    //   Text(
+    //     "Time : ${date_time.hour} : ${date_time.minute} : ${date_time.second} ",
+    //   ),
+    // };
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -456,6 +459,77 @@ class _MyHomePageState extends State<MyHomePage> {
       //     Text("current Quarter : ${DateFormat('QQQQ').format(date_time)} ")
       //   ],
       // ),
+      //Text Field (Login)
+      body: Center(
+        child: Container(
+          width: 300,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextField(
+                controller: email,
+                // enabled: false,
+                decoration: InputDecoration(
+                  hintText: "user_name@gmail.com",
+                  prefixIcon: Icon(Icons.email),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(11),
+                    borderSide: BorderSide(color: Colors.blue),
+                  ),
+                  disabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(11),
+                    borderSide: BorderSide(color: Colors.deepOrange),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(11),
+                    borderSide: BorderSide(color: Colors.green),
+                  ),
+                ),
+              ),
+              Container(height: 15),
+              TextField(
+                controller: password,
+                keyboardType: TextInputType.visiblePassword,
+                obscureText: true,
+                obscuringCharacter: '*',
+                // enabled: false,
+                decoration: InputDecoration(
+                  hintText: "Enter password",
+                  prefixIcon: Icon(Icons.password),
+                  suffixIcon: IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.remove_red_eye),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(11),
+                    borderSide: BorderSide(color: Colors.blue),
+                  ),
+                  disabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(11),
+                    borderSide: BorderSide(color: Colors.deepOrange),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(11),
+                    borderSide: BorderSide(color: Colors.green),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ElevatedButton(
+                  onPressed: () {
+                    var emailtext = email.text.toString();
+                    var passwordtext = password.text.toString();
+                    print("Email : $emailtext",);
+                    print("Password : $passwordtext",);
+                  },
+                  child: Text("Login"),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
   //   void _showSimOptions(BuildContext context) {
