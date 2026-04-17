@@ -41,6 +41,8 @@ class _MyHomePageState extends State<MyHomePage> {
   // var arr2 = {"assets/images/Iqbal.jpeg","assets/images/Sarang.jpeg","assets/images/Ali.jpeg","assets/images/Ahmed.jpeg","assets/images/Mushtaque.jpeg","assets/images/Iqbal2.jpeg","assets/images/sarang2.jpeg","assets/images/sher.jpeg","assets/images/MB.jpeg","assets/images/girl.jpeg"};
   var email = TextEditingController();
   var password = TextEditingController();
+  var num1 = TextEditingController();
+  var num2 = TextEditingController();
   @override
   Widget build(BuildContext context) {
     var date_time = DateTime.now();
@@ -460,76 +462,163 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ],
       // ),
       //Text Field (Login)
+      // body: Center(
+      //   child: Container(
+      //     width: 300,
+      //     child: Column(
+      //       mainAxisAlignment: MainAxisAlignment.center,
+      //       children: [
+      //         TextField(
+      //           controller: email,
+      //           // enabled: false,
+      //           decoration: InputDecoration(
+      //             hintText: "user_name@gmail.com",
+      //             prefixIcon: Icon(Icons.email),
+      //             enabledBorder: OutlineInputBorder(
+      //               borderRadius: BorderRadius.circular(11),
+      //               borderSide: BorderSide(color: Colors.blue),
+      //             ),
+      //             disabledBorder: OutlineInputBorder(
+      //               borderRadius: BorderRadius.circular(11),
+      //               borderSide: BorderSide(color: Colors.deepOrange),
+      //             ),
+      //             focusedBorder: OutlineInputBorder(
+      //               borderRadius: BorderRadius.circular(11),
+      //               borderSide: BorderSide(color: Colors.green),
+      //             ),
+      //           ),
+      //         ),
+      //         Container(height: 15),
+      //         TextField(
+      //           controller: password,
+      //           keyboardType: TextInputType.visiblePassword,
+      //           obscureText: true,
+      //           obscuringCharacter: '*',
+      //           // enabled: false,
+      //           decoration: InputDecoration(
+      //             hintText: "Enter password",
+      //             prefixIcon: Icon(Icons.password),
+      //             suffixIcon: IconButton(
+      //               onPressed: () {},
+      //               icon: Icon(Icons.remove_red_eye),
+      //             ),
+      //             enabledBorder: OutlineInputBorder(
+      //               borderRadius: BorderRadius.circular(11),
+      //               borderSide: BorderSide(color: Colors.blue),
+      //             ),
+      //             disabledBorder: OutlineInputBorder(
+      //               borderRadius: BorderRadius.circular(11),
+      //               borderSide: BorderSide(color: Colors.deepOrange),
+      //             ),
+      //             focusedBorder: OutlineInputBorder(
+      //               borderRadius: BorderRadius.circular(11),
+      //               borderSide: BorderSide(color: Colors.green),
+      //             ),
+      //           ),
+      //         ),
+      //         Padding(
+      //           padding: const EdgeInsets.all(8.0),
+      //           child: ElevatedButton(
+      //             onPressed: () {
+      //               var emailtext = email.text.toString();
+      //               var passwordtext = password.text.toString();
+      //               print("Email : $emailtext",);
+      //               print("Password : $passwordtext",);
+      //             },
+      //             child: Text("Login"),
+      //           ),
+      //         ),
+      //       ],
+      //     ),
+      //   ),
+      // ),
       body: Center(
-        child: Container(
-          width: 300,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TextField(
-                controller: email,
-                // enabled: false,
-                decoration: InputDecoration(
-                  hintText: "user_name@gmail.com",
-                  prefixIcon: Icon(Icons.email),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(11),
-                    borderSide: BorderSide(color: Colors.blue),
-                  ),
-                  disabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(11),
-                    borderSide: BorderSide(color: Colors.deepOrange),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(11),
-                    borderSide: BorderSide(color: Colors.green),
-                  ),
-                ),
-              ),
-              Container(height: 15),
-              TextField(
-                controller: password,
-                keyboardType: TextInputType.visiblePassword,
-                obscureText: true,
-                obscuringCharacter: '*',
-                // enabled: false,
-                decoration: InputDecoration(
-                  hintText: "Enter password",
-                  prefixIcon: Icon(Icons.password),
-                  suffixIcon: IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.remove_red_eye),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(11),
-                    borderSide: BorderSide(color: Colors.blue),
-                  ),
-                  disabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(11),
-                    borderSide: BorderSide(color: Colors.deepOrange),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(11),
-                    borderSide: BorderSide(color: Colors.green),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ElevatedButton(
-                  onPressed: () {
-                    var emailtext = email.text.toString();
-                    var passwordtext = password.text.toString();
-                    print("Email : $emailtext",);
-                    print("Password : $passwordtext",);
-                  },
-                  child: Text("Login"),
-                ),
-              ),
-            ],
+    child: Container(
+    height: 260,
+    width: 200,
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        TextField(
+          controller: num1,
+          keyboardType: TextInputType.number,
+          inputFormatters: [
+            FilteringTextInputFormatter.digitsOnly
+          ],
+          decoration: InputDecoration(
+            hintText: "Enter first number",
+            border: OutlineInputBorder(),
           ),
         ),
-      ),
+
+        TextField(
+          controller: num2,
+          keyboardType: TextInputType.number,
+          inputFormatters: [
+            FilteringTextInputFormatter.digitsOnly
+          ],
+          decoration: InputDecoration(
+            hintText: "Enter second number",
+            border: OutlineInputBorder(),
+          ),
+        ),
+
+        // 🔹 Operator Input
+        TextField(
+          controller: operator,
+          decoration: InputDecoration(
+            hintText: "Enter operator (+, -, *, /)",
+            border: OutlineInputBorder(),
+          ),
+        ),
+
+        ElevatedButton(
+          onPressed: () {
+            var number1 = int.tryParse(num1.text);
+            var number2 = int.tryParse(num2.text);
+            var op = operator.text;
+
+            if (number1 != null && number2 != null && op.isNotEmpty) {
+              var result;
+
+              switch (op) {
+                case "+":
+                  result = number1 + number2;
+                  break;
+
+                case "-":
+                  result = number1 - number2;
+                  break;
+
+                case "*":
+                  result = number1 * number2;
+                  break;
+
+                case "/":
+                  if (number2 != 0) {
+                    result = number1 / number2;
+                  } else {
+                    print("Cannot divide by zero");
+                    return;
+                  }
+                  break;
+
+                default:
+                  print("Invalid operator");
+                  return;
+              }
+
+              print("Result: $result");
+            } else {
+              print("Please enter valid inputs");
+            }
+          },
+          child: Text("Calculate"),
+        ),
+      ],
+    ),
+  ),
+),
     );
   }
   //   void _showSimOptions(BuildContext context) {
