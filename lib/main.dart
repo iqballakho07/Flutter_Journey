@@ -45,7 +45,9 @@ class _MyHomePageState extends State<MyHomePage> {
   var num2 = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    var date_time = DateTime.now();
+    // var date_time = DateTime.now();
+    DateTime? datepicked;
+    TimeOfDay? timepicked;
     // var date = {
     //   Text("Day : ${date_time.day}"),
     //   Text("Month : ${date_time.month}"),
@@ -532,93 +534,123 @@ class _MyHomePageState extends State<MyHomePage> {
       //     ),
       //   ),
       // ),
+      //       body: Center(
+      //     child: Container(
+      //     height: 260,
+      //     width: 200,
+      //     child: Column(
+      //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      //       children: [
+      //         TextField(
+      //           controller: num1,
+      //           keyboardType: TextInputType.number,
+      //           inputFormatters: [
+      //             FilteringTextInputFormatter.digitsOnly
+      //           ],
+      //           decoration: InputDecoration(
+      //             hintText: "Enter first number",
+      //             border: OutlineInputBorder(),
+      //           ),
+      //         ),
+
+      //         TextField(
+      //           controller: num2,
+      //           keyboardType: TextInputType.number,
+      //           inputFormatters: [
+      //             FilteringTextInputFormatter.digitsOnly
+      //           ],
+      //           decoration: InputDecoration(
+      //             hintText: "Enter second number",
+      //             border: OutlineInputBorder(),
+      //           ),
+      //         ),
+
+      //         // 🔹 Operator Input
+      //         TextField(
+      //           controller: operator,
+      //           decoration: InputDecoration(
+      //             hintText: "Enter operator (+, -, *, /)",
+      //             border: OutlineInputBorder(),
+      //           ),
+      //         ),
+
+      //         ElevatedButton(
+      //           onPressed: () {
+      //             var number1 = int.tryParse(num1.text);
+      //             var number2 = int.tryParse(num2.text);
+      //             var op = operator.text;
+
+      //             if (number1 != null && number2 != null && op.isNotEmpty) {
+      //               var result;
+
+      //               switch (op) {
+      //                 case "+":
+      //                   result = number1 + number2;
+      //                   break;
+
+      //                 case "-":
+      //                   result = number1 - number2;
+      //                   break;
+
+      //                 case "*":
+      //                   result = number1 * number2;
+      //                   break;
+
+      //                 case "/":
+      //                   if (number2 != 0) {
+      //                     result = number1 / number2;
+      //                   } else {
+      //                     print("Cannot divide by zero");
+      //                     return;
+      //                   }
+      //                   break;
+
+      //                 default:
+      //                   print("Invalid operator");
+      //                   return;
+      //               }
+
+      //               print("Result: $result");
+      //             } else {
+      //               print("Please enter valid inputs");
+      //             }
+      //           },
+      //           child: Text("Calculate"),
+      //         ),
+      //       ],
+      //     ),
+      //   ),
+      // ),
       body: Center(
-    child: Container(
-    height: 260,
-    width: 200,
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        TextField(
-          controller: num1,
-          keyboardType: TextInputType.number,
-          inputFormatters: [
-            FilteringTextInputFormatter.digitsOnly
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () async {
+                print(datepicked);
+                final DateTime? pickeddate = await showDatePicker(
+                  context: context,
+                  initialDate: DateTime.now(),
+                  firstDate: DateTime(2020),
+                  lastDate: DateTime(2030),
+                );
+              },
+
+              child: Text("Select date"),
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                TimeOfDay? pickedTime = await showTimePicker(
+                  context: context,
+                  initialTime: TimeOfDay.now(),
+                  initialEntryMode: TimePickerEntryMode.dial,
+                );
+              },
+              child: Text("Select Time"),
+            ),
           ],
-          decoration: InputDecoration(
-            hintText: "Enter first number",
-            border: OutlineInputBorder(),
-          ),
         ),
-
-        TextField(
-          controller: num2,
-          keyboardType: TextInputType.number,
-          inputFormatters: [
-            FilteringTextInputFormatter.digitsOnly
-          ],
-          decoration: InputDecoration(
-            hintText: "Enter second number",
-            border: OutlineInputBorder(),
-          ),
-        ),
-
-        // 🔹 Operator Input
-        TextField(
-          controller: operator,
-          decoration: InputDecoration(
-            hintText: "Enter operator (+, -, *, /)",
-            border: OutlineInputBorder(),
-          ),
-        ),
-
-        ElevatedButton(
-          onPressed: () {
-            var number1 = int.tryParse(num1.text);
-            var number2 = int.tryParse(num2.text);
-            var op = operator.text;
-
-            if (number1 != null && number2 != null && op.isNotEmpty) {
-              var result;
-
-              switch (op) {
-                case "+":
-                  result = number1 + number2;
-                  break;
-
-                case "-":
-                  result = number1 - number2;
-                  break;
-
-                case "*":
-                  result = number1 * number2;
-                  break;
-
-                case "/":
-                  if (number2 != 0) {
-                    result = number1 / number2;
-                  } else {
-                    print("Cannot divide by zero");
-                    return;
-                  }
-                  break;
-
-                default:
-                  print("Invalid operator");
-                  return;
-              }
-
-              print("Result: $result");
-            } else {
-              print("Please enter valid inputs");
-            }
-          },
-          child: Text("Calculate"),
-        ),
-      ],
-    ),
-  ),
-),
+      ),
     );
   }
   //   void _showSimOptions(BuildContext context) {
