@@ -10,6 +10,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -39,15 +40,18 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   // var arr = {"Iqbal", "Sarang", "Ali", "Ahmed", "Mushtaque", "Iqbal New Lakho","Sarang New Junejo","Sher","MB","My Incomplete love"};
   // var arr2 = {"assets/images/Iqbal.jpeg","assets/images/Sarang.jpeg","assets/images/Ali.jpeg","assets/images/Ahmed.jpeg","assets/images/Mushtaque.jpeg","assets/images/Iqbal2.jpeg","assets/images/sarang2.jpeg","assets/images/sher.jpeg","assets/images/MB.jpeg","assets/images/girl.jpeg"};
-  var email = TextEditingController();
-  var password = TextEditingController();
-  var num1 = TextEditingController();
-  var num2 = TextEditingController();
+  // var email = TextEditingController();
+  // var password = TextEditingController();
+  // var num1 = TextEditingController();
+  // var num2 = TextEditingController();
+  void callBack(){
+    print("Button clicked");
+  }
   @override
   Widget build(BuildContext context) {
     // var date_time = DateTime.now();
-    DateTime? datepicked;
-    TimeOfDay? timepicked;
+    // DateTime? datepicked;
+    // TimeOfDay? timepicked;
     // var date = {
     //   Text("Day : ${date_time.day}"),
     //   Text("Month : ${date_time.month}"),
@@ -621,38 +625,17 @@ class _MyHomePageState extends State<MyHomePage> {
       //     ),
       //   ),
       // ),
+      // 
+      //Callback function
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              onPressed: () async {
-                print(datepicked);
-                final DateTime? pickeddate = await showDatePicker(
-                  context: context,
-                  initialDate: DateTime.now(),
-                  firstDate: DateTime(2020),
-                  lastDate: DateTime(2030),
-                );
-              },
-
-              child: Text("Select date"),
-            ),
-            ElevatedButton(
-              onPressed: () async {
-                TimeOfDay? pickedTime = await showTimePicker(
-                  context: context,
-                  initialTime: TimeOfDay.now(),
-                  initialEntryMode: TimePickerEntryMode.dial,
-                );
-              },
-              child: Text("Select Time"),
-            ),
-          ],
+        child: ElevatedButton(
+          child: Text("Click me"),
+          onPressed :callBack,
         ),
       ),
     );
   }
+  
   //   void _showSimOptions(BuildContext context) {
   //   showModalBottomSheet(
   //     context: context,
