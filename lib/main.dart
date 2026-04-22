@@ -44,9 +44,10 @@ class _MyHomePageState extends State<MyHomePage> {
   // var password = TextEditingController();
   // var num1 = TextEditingController();
   // var num2 = TextEditingController();
-  void callBack(){
+  void callBack() {
     print("Button clicked");
   }
+
   @override
   Widget build(BuildContext context) {
     // var date_time = DateTime.now();
@@ -625,17 +626,65 @@ class _MyHomePageState extends State<MyHomePage> {
       //     ),
       //   ),
       // ),
-      // 
+      //
       //Callback function
-      body: Center(
-        child: ElevatedButton(
-          child: Text("Click me"),
-          onPressed :callBack,
+      // body: Center(
+      //   child: ElevatedButton(
+      //     child: Text("Click me"),
+      //     onPressed :callBack,
+      //   ),
+      // ),
+      //Grid layout
+      body: GridView.builder(
+        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 200,
+          crossAxisSpacing: 8,
+          mainAxisSpacing: 8
         ),
+        itemBuilder: (context, index) {
+          return Container(
+            color: Colors.lightBlueAccent,
+            alignment: Alignment.center,
+            child: Text("${index + 1}", style: TextStyle(fontSize: 50)),
+          );
+        },
+        itemCount: 9,
       ),
+
+      // GridView.extent(
+      //   maxCrossAxisExtent: 200,
+      //   mainAxisSpacing: 8,
+      //   crossAxisSpacing: 8,
+      //   children: [
+      //     Container(color: Colors.blue,),
+      //     Container(color: Colors.amber,),
+      //     Container(color: Colors.orange,),
+      //     Container(color: Colors.green,),
+      //     Container(color: Colors.black,),
+      //     Container(color: Colors.red,),
+      //     Container(color: Colors.brown,),
+      //     Container(color: Colors.pink,),
+      //   ],
+      // )
+
+      //  GridView.count(
+      //   crossAxisCount: 3,
+      //   mainAxisSpacing: 8,
+      //   crossAxisSpacing: 10,
+      //   children: [
+      //     Container(color: Colors.blue,),
+      //     Container(color: Colors.amber,),
+      //     Container(color: Colors.orange,),
+      //     Container(color: Colors.green,),
+      //     Container(color: Colors.black,),
+      //     Container(color: Colors.red,),
+      //     Container(color: Colors.brown,),
+      //     Container(color: Colors.pink,),
+      //   ],
+      // ),
     );
   }
-  
+
   //   void _showSimOptions(BuildContext context) {
   //   showModalBottomSheet(
   //     context: context,
