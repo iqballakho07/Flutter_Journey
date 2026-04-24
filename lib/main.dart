@@ -46,8 +46,8 @@ class _MyHomePageState extends State<MyHomePage> {
   // var password = TextEditingController();
   // var num1 = TextEditingController();
   // var num2 = TextEditingController();
-   DateTime? datepicked ;
-   TimeOfDay? timepicked ;
+  DateTime? datepicked;
+  TimeOfDay? timepicked;
   void callBack() {
     print("Button clicked");
   }
@@ -629,47 +629,47 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // ),
       //Date picker and Time picker
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text( datepicked !=null
-             ?  DateFormat("d MMMM y").format(datepicked!)
-             :  "${DateTime.now()}"  ),
-            ElevatedButton(
-              onPressed: () async {
-                final DateTime? pickeddate = await showDatePicker(
-                  context: context,
-                  initialDate: DateTime.now(),
-                  firstDate: DateTime(2020),
-                  lastDate: DateTime(2030),
-                );
+      // body: Center(
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       Text( datepicked !=null
+      //        ?  DateFormat("d MMMM y").format(datepicked!)
+      //        :  "${DateTime.now()}"  ),
+      //       ElevatedButton(
+      //         onPressed: () async {
+      //           final DateTime? pickeddate = await showDatePicker(
+      //             context: context,
+      //             initialDate: DateTime.now(),
+      //             firstDate: DateTime(2020),
+      //             lastDate: DateTime(2030),
+      //           );
 
-                setState(() {
-                  datepicked=pickeddate;
-                });
-              },
+      //           setState(() {
+      //             datepicked=pickeddate;
+      //           });
+      //         },
 
-              child: Text("Select date"),
-            ),
-            Text( timepicked!=null
-            ? timepicked!.format(context)
-            : "${TimeOfDay.now()}"),
-            ElevatedButton(
-              onPressed: () async {
-                TimeOfDay? pickedTime = await showTimePicker(
-                  context: context,
-                  initialTime: TimeOfDay.now(),
-                  initialEntryMode: TimePickerEntryMode.dial,
-                );
-                setState(() {
-                  timepicked=pickedTime;
-                });
-              },
-              child: Text("Select Time"),
-            ),
-          ],
-      ),
+      //         child: Text("Select date"),
+      //       ),
+      //       Text( timepicked!=null
+      //       ? timepicked!.format(context)
+      //       : "${TimeOfDay.now()}"),
+      //       ElevatedButton(
+      //         onPressed: () async {
+      //           TimeOfDay? pickedTime = await showTimePicker(
+      //             context: context,
+      //             initialTime: TimeOfDay.now(),
+      //             initialEntryMode: TimePickerEntryMode.dial,
+      //           );
+      //           setState(() {
+      //             timepicked=pickedTime;
+      //           });
+      //         },
+      //         child: Text("Select Time"),
+      //       ),
+      //     ],
+      // ),
       //Callback function
       // body: Center(
       //   child: ElevatedButton(
@@ -678,21 +678,7 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // ),
       //Grid layout
-      // body: GridView.builder(
-      //   gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-      //     maxCrossAxisExtent: 200,
-      //     crossAxisSpacing: 8,
-      //     mainAxisSpacing: 8
-      //   ),
-      //   itemBuilder: (context, index) {
-      //     return Container(
-      //       color: Colors.lightBlueAccent,
-      //       alignment: Alignment.center,
-      //       child: Text("${index + 1}", style: TextStyle(fontSize: 50)),
-      //     );
-      //   },
-      //   itemCount: 9,
-      // ),
+      body:GridContainer(),
 
       // GridView.extent(
       //   maxCrossAxisExtent: 200,
@@ -725,10 +711,9 @@ class _MyHomePageState extends State<MyHomePage> {
       //     Container(color: Colors.pink,),
       //   ],
       // ),
-      )
+      // )
     );
-
-   }
+  }
 
   //   void _showSimOptions(BuildContext context) {
   //   showModalBottomSheet(
@@ -768,4 +753,25 @@ class _MyHomePageState extends State<MyHomePage> {
   //     },
   //   );
   // }
+}
+
+class GridContainer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+        maxCrossAxisExtent: 200,
+        crossAxisSpacing: 8,
+        mainAxisSpacing: 8,
+      ),
+      itemBuilder: (context, index) {
+        return Container(
+          color: Colors.lightBlueAccent,
+          alignment: Alignment.center,
+          child: Text("${index + 1}", style: TextStyle(fontSize: 50)),
+        );
+      },
+      itemCount: 9,
+    );
+  }
 }
