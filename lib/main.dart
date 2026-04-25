@@ -678,8 +678,7 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // ),
       //Grid layout
-      body:GridContainer(),
-
+      // body:GridContainer(),
       // GridView.extent(
       //   maxCrossAxisExtent: 200,
       //   mainAxisSpacing: 8,
@@ -712,7 +711,39 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ],
       // ),
       // )
-    );
+      //Stack widget
+      body : Container(
+        height: 300,
+        width: 300,
+        child: Stack (
+          children: [
+            Container(
+              height: 200,
+              width: 200,
+              color: Colors.blueGrey,
+            ),
+            Positioned(
+              left: 20,
+              top: 20,
+              child: Container(
+                height: 200,
+                width: 200,
+                color: Colors.amber,
+              ),
+            ),
+            Positioned(
+              top: 40,
+              left: 40,
+              child: Container(
+                height: 200,
+                width: 200,
+                color: Colors.orange,
+              ),
+            )
+          ],
+            ),
+      )
+      );
   }
 
   //   void _showSimOptions(BuildContext context) {
@@ -755,23 +786,23 @@ class _MyHomePageState extends State<MyHomePage> {
   // }
 }
 
-class GridContainer extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return GridView.builder(
-      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-        maxCrossAxisExtent: 200,
-        crossAxisSpacing: 8,
-        mainAxisSpacing: 8,
-      ),
-      itemBuilder: (context, index) {
-        return Container(
-          color: Colors.lightBlueAccent,
-          alignment: Alignment.center,
-          child: Text("${index + 1}", style: TextStyle(fontSize: 50)),
-        );
-      },
-      itemCount: 9,
-    );
-  }
-}
+// class GridContainer extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return GridView.builder(
+//       gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+//         maxCrossAxisExtent: 200,
+//         crossAxisSpacing: 8,
+//         mainAxisSpacing: 8,
+//       ),
+//       itemBuilder: (context, index) {
+//         return Container(
+//           color: Colors.lightBlueAccent,
+//           alignment: Alignment.center,
+//           child: Text("${index + 1}", style: TextStyle(fontSize: 50)),
+//         );
+//       },
+//       itemCount: 9,
+//     );
+//   }
+// }
