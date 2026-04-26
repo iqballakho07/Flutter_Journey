@@ -712,36 +712,44 @@ class _MyHomePageState extends State<MyHomePage> {
       // ),
       // )
       //Stack widget
-      body : Container(
-        height: 300,
-        width: 300,
-        child: Stack (
-          children: [
-            Container(
-              height: 200,
-              width: 200,
-              color: Colors.blueGrey,
-            ),
-            Positioned(
-              left: 20,
-              top: 20,
-              child: Container(
-                height: 200,
-                width: 200,
-                color: Colors.amber,
-              ),
-            ),
-            Positioned(
-              top: 40,
-              left: 40,
-              child: Container(
-                height: 200,
-                width: 200,
-                color: Colors.orange,
-              ),
-            )
-          ],
-            ),
+      // body : Container(
+      //   height: 300,
+      //   width: 300,
+      //   child: Stack (
+      //     children: [
+      //       Container(
+      //         height: 200,
+      //         width: 200,
+      //         color: Colors.blueGrey,
+      //       ),
+      //       Positioned(
+      //         left: 20,
+      //         top: 20,
+      //         child: Container(
+      //           height: 200,
+      //           width: 200,
+      //           color: Colors.amber,
+      //         ),
+      //       ),
+      //       Positioned(
+      //         top: 40,
+      //         left: 40,
+      //         child: Container(
+      //           height: 200,
+      //           width: 200,
+      //           color: Colors.orange,
+      //         ),
+      //       )
+      //     ],
+      //       ),
+      // )
+      //Icon widget
+      body: Center(
+        child:Icon(
+          Icons.play_circle_fill,
+          size: 100,
+          color: Colors.blueGrey,
+      ),
       )
       );
   }
