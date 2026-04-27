@@ -752,35 +752,92 @@ class _MyHomePageState extends State<MyHomePage> {
       // ),
       // )
       //Sized Box
-      body: Center(
-  child: Container(
+    body: Center(
+  child: Padding(
     padding: EdgeInsets.all(20),
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         SizedBox(
-          width: 250,
-          height: 150,
+          width: 300,
+          height: 180,
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.blue,
-              borderRadius: BorderRadius.circular(15),
+              gradient: LinearGradient(
+                colors: [Colors.blue, Colors.purple],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black26,
+                  blurRadius: 10,
+                  offset: Offset(0, 5),
+                )
+              ],
             ),
             child: Center(
               child: Text(
-                'Welcome',
-                style: TextStyle(color: Colors.white, fontSize: 20),
+                'Welcome Back',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),
         ),
-        SizedBox(height: 20),
+        SizedBox(height: 30),
         SizedBox(
-          width: 250,
-          height: 50,
+          width: 300,
+          height: 55,
+          child: TextField(
+            decoration: InputDecoration(
+              hintText: 'Email',
+              filled: true,
+              fillColor: Colors.grey[200],
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: BorderSide.none,
+              ),
+            ),
+          ),
+        ),
+        SizedBox(height: 15),
+        SizedBox(
+          width: 300,
+          height: 55,
+          child: TextField(
+            obscureText: true,
+            decoration: InputDecoration(
+              hintText: 'Password',
+              filled: true,
+              fillColor: Colors.grey[200],
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: BorderSide.none,
+              ),
+            ),
+          ),
+        ),
+        SizedBox(height: 25),
+        SizedBox(
+          width: 300,
+          height: 55,
           child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
+              ),
+              backgroundColor: Colors.purple,
+            ),
             onPressed: () {},
-            child: Text('Get Started'),
+            child: Text(
+              'Login',
+              style: TextStyle(fontSize: 18),
+            ),
           ),
         ),
       ],
