@@ -744,13 +744,49 @@ class _MyHomePageState extends State<MyHomePage> {
       //       ),
       // )
       //Icon widget
+      // body: Center(
+      //   child:Icon(
+      //     Icons.play_circle_fill,
+      //     size: 100,
+      //     color: Colors.blueGrey,
+      // ),
+      // )
+      //Sized Box
       body: Center(
-        child:Icon(
-          Icons.play_circle_fill,
-          size: 100,
-          color: Colors.blueGrey,
-      ),
-      )
+  child: Container(
+    padding: EdgeInsets.all(20),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        SizedBox(
+          width: 250,
+          height: 150,
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.blue,
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: Center(
+              child: Text(
+                'Welcome',
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+            ),
+          ),
+        ),
+        SizedBox(height: 20),
+        SizedBox(
+          width: 250,
+          height: 50,
+          child: ElevatedButton(
+            onPressed: () {},
+            child: Text('Get Started'),
+          ),
+        ),
+      ],
+    ),
+  ),
+),
       );
   }
 
