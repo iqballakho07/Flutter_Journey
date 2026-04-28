@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
+import 'Widgets/rounded_btn.dart';
 
 void main() {
   runApp(const MyApp());
@@ -751,100 +752,128 @@ class _MyHomePageState extends State<MyHomePage> {
       //     color: Colors.blueGrey,
       // ),
       // )
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: 120,
+              child: RoundedBtn(
+                btnName: "Login",
+                bgColor: Colors.orange,
+                callback: () {
+                  print("Clicked");
+                },
+                icon: Icon(Icons.login),
+              ),
+            ),
+            Container(height: 20,),
+            Container(
+              width: 120,
+              child: RoundedBtn(
+                btnName: "Sign Up",
+                callback: () {
+                  print("pressed");
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
       //Sized Box
-    body: Center(
-  child: Padding(
-    padding: EdgeInsets.all(20),
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        SizedBox(
-          width: 300,
-          height: 180,
-          child: Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Colors.blue, Colors.purple],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black26,
-                  blurRadius: 10,
-                  offset: Offset(0, 5),
-                )
-              ],
-            ),
-            child: Center(
-              child: Text(
-                'Welcome Back',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ),
-        ),
-        SizedBox(height: 30),
-        SizedBox(
-          width: 300,
-          height: 55,
-          child: TextField(
-            decoration: InputDecoration(
-              hintText: 'Email',
-              filled: true,
-              fillColor: Colors.grey[200],
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(15),
-                borderSide: BorderSide.none,
-              ),
-            ),
-          ),
-        ),
-        SizedBox(height: 15),
-        SizedBox(
-          width: 300,
-          height: 55,
-          child: TextField(
-            obscureText: true,
-            decoration: InputDecoration(
-              hintText: 'Password',
-              filled: true,
-              fillColor: Colors.grey[200],
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(15),
-                borderSide: BorderSide.none,
-              ),
-            ),
-          ),
-        ),
-        SizedBox(height: 25),
-        SizedBox(
-          width: 300,
-          height: 55,
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15),
-              ),
-              backgroundColor: Colors.purple,
-            ),
-            onPressed: () {},
-            child: Text(
-              'Login',
-              style: TextStyle(fontSize: 18),
-            ),
-          ),
-        ),
-      ],
-    ),
-  ),
-),
-      );
+      //     body: Center(
+      //   child: Padding(
+      //     padding: EdgeInsets.all(20),
+      //     child: Column(
+      //       mainAxisAlignment: MainAxisAlignment.center,
+      //       children: [
+      //         SizedBox(
+      //           width: 300,
+      //           height: 180,
+      //           child: Container(
+      //             decoration: BoxDecoration(
+      //               gradient: LinearGradient(
+      //                 colors: [Colors.blue, Colors.purple],
+      //                 begin: Alignment.topLeft,
+      //                 end: Alignment.bottomRight,
+      //               ),
+      //               borderRadius: BorderRadius.circular(20),
+      //               boxShadow: [
+      //                 BoxShadow(
+      //                   color: Colors.black26,
+      //                   blurRadius: 10,
+      //                   offset: Offset(0, 5),
+      //                 )
+      //               ],
+      //             ),
+      //             child: Center(
+      //               child: Text(
+      //                 'Welcome Back',
+      //                 style: TextStyle(
+      //                   color: Colors.white,
+      //                   fontSize: 24,
+      //                   fontWeight: FontWeight.bold,
+      //                 ),
+      //               ),
+      //             ),
+      //           ),
+      //         ),
+      //         SizedBox(height: 30),
+      //         SizedBox(
+      //           width: 300,
+      //           height: 55,
+      //           child: TextField(
+      //             decoration: InputDecoration(
+      //               hintText: 'Email',
+      //               filled: true,
+      //               fillColor: Colors.grey[200],
+      //               border: OutlineInputBorder(
+      //                 borderRadius: BorderRadius.circular(15),
+      //                 borderSide: BorderSide.none,
+      //               ),
+      //             ),
+      //           ),
+      //         ),
+      //         SizedBox(height: 15),
+      //         SizedBox(
+      //           width: 300,
+      //           height: 55,
+      //           child: TextField(
+      //             obscureText: true,
+      //             decoration: InputDecoration(
+      //               hintText: 'Password',
+      //               filled: true,
+      //               fillColor: Colors.grey[200],
+      //               border: OutlineInputBorder(
+      //                 borderRadius: BorderRadius.circular(15),
+      //                 borderSide: BorderSide.none,
+      //               ),
+      //             ),
+      //           ),
+      //         ),
+      //         SizedBox(height: 25),
+      //         SizedBox(
+      //           width: 300,
+      //           height: 55,
+      //           child: ElevatedButton(
+      //             style: ElevatedButton.styleFrom(
+      //               shape: RoundedRectangleBorder(
+      //                 borderRadius: BorderRadius.circular(15),
+      //               ),
+      //               backgroundColor: Colors.purple,
+      //             ),
+      //             onPressed: () {},
+      //             child: Text(
+      //               'Login',
+      //               style: TextStyle(fontSize: 18),
+      //             ),
+      //           ),
+      //         ),
+      //       ],
+      //     ),
+      //   ),
+      // ),
+    );
   }
 
   //   void _showSimOptions(BuildContext context) {
