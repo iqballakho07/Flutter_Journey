@@ -752,34 +752,68 @@ class _MyHomePageState extends State<MyHomePage> {
       //     color: Colors.blueGrey,
       // ),
       // )
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+      //Custom widget
+      // body: Center(
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       Container(
+      //         width: 120,
+      //         child: RoundedBtn(
+      //           btnName: "Login",
+      //           bgColor: Colors.orange,
+      //           callback: () {
+      //             print("Clicked");
+      //           },
+      //           icon: Icon(Icons.login),
+      //         ),
+      //       ),
+      //       Container(height: 20,),
+      //       Container(
+      //         width: 120,
+      //         child: RoundedBtn(
+      //           btnName: "Sign Up",
+      //           callback: () {
+      //             print("pressed");
+      //           },
+      //         ),
+      //       ),
+      //     ],
+      //   ),
+      // ),
+      //Wrap Widget
+      body:Container(
+        width: double.infinity,
+        height: double.infinity,
+        child:Wrap(
+          direction: Axis.vertical,
+          spacing: 11,
+          runSpacing: 11,
+          alignment: WrapAlignment.spaceBetween,
           children: [
             Container(
-              width: 120,
-              child: RoundedBtn(
-                btnName: "Login",
-                bgColor: Colors.orange,
-                callback: () {
-                  print("Clicked");
-                },
-                icon: Icon(Icons.login),
-              ),
+              width: 300,
+              height: 180,
+              color: Colors.amber,
             ),
-            Container(height: 20,),
             Container(
-              width: 120,
-              child: RoundedBtn(
-                btnName: "Sign Up",
-                callback: () {
-                  print("pressed");
-                },
-              ),
+              width:300,
+              height: 180,
+              color: Colors.blue,
             ),
+            Container(
+              width: 300,
+              height: 180,
+              color: Colors.brown,
+            ),
+            Container(
+              width: 300,
+              height: 180,
+              color: Colors.green,
+            )
           ],
-        ),
-      ),
+        )
+      )
       //Sized Box
       //     body: Center(
       //   child: Padding(
