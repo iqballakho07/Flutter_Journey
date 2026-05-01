@@ -907,25 +907,59 @@ class _MyHomePageState extends State<MyHomePage> {
       //     ),
       //   ),
       // ),
-      body : RichText(
-  text: TextSpan(
-    text: 'Hello ',
-    style: TextStyle(color: Colors.black, fontSize: 20),
-    children: [
-      TextSpan(
-        text: 'World',
-        style: TextStyle(
-          color: Colors.blue,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-      TextSpan(
-        text: '!',
-        style: TextStyle(color: Colors.red),
-      ),
-    ],
-  ),
-)
+      body : Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          RichText(
+            text: TextSpan(
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.black
+              ),
+              children: [
+                TextSpan(
+                  text: "Welcome to ",
+                  style: TextStyle(
+                    color: Colors.blue,
+                    fontStyle: FontStyle.italic,
+                  )
+                ),
+                TextSpan(
+                  text: "Flutter",
+                  style: TextStyle(
+                    color: Colors.green,
+                    fontWeight: FontWeight.bold,
+                  )
+                )
+              ]
+            ),
+           ),
+           RichText(text: TextSpan(
+            style: TextStyle(
+              fontSize: 20,
+              color: Colors.black
+            ),
+            children: [
+               TextSpan(
+                  text: "Muhammad",
+                  style: TextStyle(
+                    color: Colors.pink,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "myfonts2"
+                  )
+                ),
+                TextSpan(
+                  text: " Iqbal",
+                  style: TextStyle(
+                    color: Colors.orange,
+                    fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.italic
+                  )
+                )
+            ]
+           ))
+        ],
+      )
     );
   }
 
