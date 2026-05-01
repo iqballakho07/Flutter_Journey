@@ -782,38 +782,38 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // ),
       //Wrap Widget
-      body:Container(
-        width: double.infinity,
-        height: double.infinity,
-        child:Wrap(
-          direction: Axis.vertical,
-          spacing: 11,
-          runSpacing: 11,
-          alignment: WrapAlignment.spaceBetween,
-          children: [
-            Container(
-              width: 300,
-              height: 180,
-              color: Colors.amber,
-            ),
-            Container(
-              width:300,
-              height: 180,
-              color: Colors.blue,
-            ),
-            Container(
-              width: 300,
-              height: 180,
-              color: Colors.brown,
-            ),
-            Container(
-              width: 300,
-              height: 180,
-              color: Colors.green,
-            )
-          ],
-        )
-      )
+      // body:Container(
+      //   width: double.infinity,
+      //   height: double.infinity,
+      //   child:Wrap(
+      //     direction: Axis.vertical,
+      //     spacing: 11,
+      //     runSpacing: 11,
+      //     alignment: WrapAlignment.spaceBetween,
+      //     children: [
+      //       Container(
+      //         width: 300,
+      //         height: 180,
+      //         color: Colors.amber,
+      //       ),
+      //       Container(
+      //         width:300,
+      //         height: 180,
+      //         color: Colors.blue,
+      //       ),
+      //       Container(
+      //         width: 300,
+      //         height: 180,
+      //         color: Colors.brown,
+      //       ),
+      //       Container(
+      //         width: 300,
+      //         height: 180,
+      //         color: Colors.green,
+      //       )
+      //     ],
+      //   )
+      // )
       //Sized Box
       //     body: Center(
       //   child: Padding(
@@ -907,6 +907,25 @@ class _MyHomePageState extends State<MyHomePage> {
       //     ),
       //   ),
       // ),
+      body : RichText(
+  text: TextSpan(
+    text: 'Hello ',
+    style: TextStyle(color: Colors.black, fontSize: 20),
+    children: [
+      TextSpan(
+        text: 'World',
+        style: TextStyle(
+          color: Colors.blue,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      TextSpan(
+        text: '!',
+        style: TextStyle(color: Colors.red),
+      ),
+    ],
+  ),
+)
     );
   }
 
