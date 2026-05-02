@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'Widgets/rounded_btn.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -907,59 +908,65 @@ class _MyHomePageState extends State<MyHomePage> {
       //     ),
       //   ),
       // ),
-      body : Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      //Rich Text
+      // body : Column(
+      //   crossAxisAlignment: CrossAxisAlignment.start,
+      //   children: [
+      //     RichText(
+      //       text: TextSpan(
+      //         style: TextStyle(
+      //           fontSize: 20,
+      //           color: Colors.black
+      //         ),
+      //         children: [
+      //           TextSpan(
+      //             text: "Welcome to ",
+      //             style: TextStyle(
+      //               color: Colors.blue,
+      //               fontStyle: FontStyle.italic,
+      //             )
+      //           ),
+      //           TextSpan(
+      //             text: "Flutter",
+      //             style: TextStyle(
+      //               color: Colors.green,
+      //               fontWeight: FontWeight.bold,
+      //             )
+      //           )
+      //         ]
+      //       ),
+      //      ),
+      //      RichText(text: TextSpan(
+      //       style: TextStyle(
+      //         fontSize: 20,
+      //         color: Colors.black
+      //       ),
+      //       children: [
+      //          TextSpan(
+      //             text: "Muhammad",
+      //             style: TextStyle(
+      //               color: Colors.pink,
+      //               fontWeight: FontWeight.bold,
+      //               fontFamily: "myfonts2"
+      //             )
+      //           ),
+      //           TextSpan(
+      //             text: " Iqbal",
+      //             style: TextStyle(
+      //               color: Colors.orange,
+      //               fontWeight: FontWeight.bold,
+      //               fontStyle: FontStyle.italic
+      //             )
+      //           )
+      //       ]
+      //      ))
+      //   ],
+      // )
+      body: Row(
         children: [
-          RichText(
-            text: TextSpan(
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.black
-              ),
-              children: [
-                TextSpan(
-                  text: "Welcome to ",
-                  style: TextStyle(
-                    color: Colors.blue,
-                    fontStyle: FontStyle.italic,
-                  )
-                ),
-                TextSpan(
-                  text: "Flutter",
-                  style: TextStyle(
-                    color: Colors.green,
-                    fontWeight: FontWeight.bold,
-                  )
-                )
-              ]
-            ),
-           ),
-           RichText(text: TextSpan(
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.black
-            ),
-            children: [
-               TextSpan(
-                  text: "Muhammad",
-                  style: TextStyle(
-                    color: Colors.pink,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "myfonts2"
-                  )
-                ),
-                TextSpan(
-                  text: " Iqbal",
-                  style: TextStyle(
-                    color: Colors.orange,
-                    fontWeight: FontWeight.bold,
-                    fontStyle: FontStyle.italic
-                  )
-                )
-            ]
-           ))
+         FaIcon(FontAwesomeIcons.facebook, size: 50, color: Colors.blue,),
         ],
-      )
+      ),
     );
   }
 
