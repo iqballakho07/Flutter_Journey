@@ -969,24 +969,31 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ],
       // ),
       //Positioned Widget
-      body : Container(
-        height: 400,
-        width: 400,
-        color: Colors.amberAccent,
-        child: Stack(
-          children: [
-            Positioned(
-              left: 100,
-              top: 100,
-              child: Container(
-                height: 200,
-                width: 200,
-                color: Colors.blue,
-              ),
-            )
-          ],
-        ),
-      )
+      body: Stack(
+        children: [
+          Container(
+            color: Colors.grey[300],
+          ),
+          Positioned(
+            top: 50,
+            left: 30,
+            child: Container(
+              width: 100,
+              height: 100,
+              color: Colors.blue,
+            ),
+          ),
+          Positioned(
+            bottom: 50,
+            right: 30,
+            child: Container(
+              width: 120,
+              height: 120,
+              color: Colors.red,
+            ),
+          ),
+        ],
+      ),
       
     );
   }
