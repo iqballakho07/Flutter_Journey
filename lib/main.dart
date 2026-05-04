@@ -962,11 +962,32 @@ class _MyHomePageState extends State<MyHomePage> {
       //      ))
       //   ],
       // )
-      body: Row(
-        children: [
-         FaIcon(FontAwesomeIcons.facebook, size: 50, color: Colors.blue,),
-        ],
-      ),
+      //Font Awesome Icons
+      // body: Row(
+      //   children: [
+      //    FaIcon(FontAwesomeIcons.facebook, size: 50, color: Colors.blue,),
+      //   ],
+      // ),
+      //Positioned Widget
+      body : Container(
+        height: 400,
+        width: 400,
+        color: Colors.amberAccent,
+        child: Stack(
+          children: [
+            Positioned(
+              left: 100,
+              top: 100,
+              child: Container(
+                height: 200,
+                width: 200,
+                color: Colors.blue,
+              ),
+            )
+          ],
+        ),
+      )
+      
     );
   }
 
