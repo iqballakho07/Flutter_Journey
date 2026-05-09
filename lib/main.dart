@@ -1015,21 +1015,70 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
   child: ConstrainedBox(
     constraints: BoxConstraints(
-      minWidth: 150,
-      minHeight: 100,
-      maxWidth: 250,
-      maxHeight: 200,
+      minWidth: 300,
+      maxWidth: 350,
+      minHeight: 180,
     ),
     child: Container(
-      color: Colors.blue,
-      child: Center(
-        child: Text(
-          "Constrained Box",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-          ),
+      padding: EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Colors.deepPurple,
+            Colors.purpleAccent,
+          ],
         ),
+        borderRadius: BorderRadius.circular(25),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.purple.withOpacity(0.4),
+            blurRadius: 15,
+            offset: Offset(0, 8),
+          ),
+        ],
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          CircleAvatar(
+            radius: 30,
+            backgroundColor: Colors.white,
+            child: Icon(
+              Icons.person,
+              size: 35,
+              color: Colors.deepPurple,
+            ),
+          ),
+          SizedBox(height: 20),
+          Text(
+            "Muhammad Iqbal",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          SizedBox(height: 8),
+          Text(
+            "Flutter Developer",
+            style: TextStyle(
+              color: Colors.white70,
+              fontSize: 16,
+            ),
+          ),
+          SizedBox(height: 20),
+          Row(
+            children: [
+              Icon(Icons.email, color: Colors.white),
+              SizedBox(width: 10),
+              Text(
+                "iqbal@gmail.com",
+                style: TextStyle(color: Colors.white),
+              ),
+            ],
+          ),
+        ],
       ),
     ),
   ),
