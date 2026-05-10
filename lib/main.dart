@@ -1157,7 +1157,10 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: MyHomePage());
+    return MaterialApp(
+      home: MyHomePage(),
+      debugShowCheckedModeBanner: false,
+    );
   }
 }
 
@@ -1169,7 +1172,26 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomeState extends State<MyHomePage> {
+  int counter = 0;
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(title: Text("Counter Application"),),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Count : $counter", style: TextStyle(fontSize: 20)),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  counter++;
+                });
+              },
+              child: Text("Increment"),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
