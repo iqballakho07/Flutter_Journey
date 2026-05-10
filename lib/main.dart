@@ -6,1126 +6,1127 @@ import 'package:intl/intl.dart';
 import 'Widgets/rounded_btn.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-void main() {
-  runApp(const MyApp());
+// void main() {
+//   runApp(const MyApp());
 
-  print('Hello, World!');
-}
+//   print('Hello, World!');
+// }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Contacts',
-      theme: ThemeData(
-        primaryColor: Colors.blue,
-        // textTheme: TextTheme(
-        //   headlineLarge: TextStyle(fontSize: 20,fontFamily: 'myfonts'),
-        //   titleSmall: TextStyle(fontSize: 10,fontFamily: 'myfonts2')
-        // )
-      ),
-      home: const MyHomePage(title: 'Contacts'),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       title: 'Contacts',
+//       theme: ThemeData(
+//         primaryColor: Colors.blue,
+//         // textTheme: TextTheme(
+//         //   headlineLarge: TextStyle(fontSize: 20,fontFamily: 'myfonts'),
+//         //   titleSmall: TextStyle(fontSize: 10,fontFamily: 'myfonts2')
+//         // )
+//       ),
+//       home: const MyHomePage(title: 'Contacts'),
+//     );
+//   }
+// }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+// class MyHomePage extends StatefulWidget {
+//   const MyHomePage({super.key, required this.title});
 
-  final String title;
+//   final String title;
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
+//   @override
+//   State<MyHomePage> createState() => _MyHomePageState();
+// }
 
-class _MyHomePageState extends State<MyHomePage> {
-  // var arr = {"Iqbal", "Sarang", "Ali", "Ahmed", "Mushtaque", "Iqbal New Lakho","Sarang New Junejo","Sher","MB","My Incomplete love"};
-  // var arr2 = {"assets/images/Iqbal.jpeg","assets/images/Sarang.jpeg","assets/images/Ali.jpeg","assets/images/Ahmed.jpeg","assets/images/Mushtaque.jpeg","assets/images/Iqbal2.jpeg","assets/images/sarang2.jpeg","assets/images/sher.jpeg","assets/images/MB.jpeg","assets/images/girl.jpeg"};
-  // var email = TextEditingController();
-  // var password = TextEditingController();
-  // var num1 = TextEditingController();
-  // var num2 = TextEditingController();
-  DateTime? datepicked;
-  TimeOfDay? timepicked;
-  void callBack() {
-    print("Button clicked");
-  }
+// class _MyHomePageState extends State<MyHomePage> {
+// var arr = {"Iqbal", "Sarang", "Ali", "Ahmed", "Mushtaque", "Iqbal New Lakho","Sarang New Junejo","Sher","MB","My Incomplete love"};
+// var arr2 = {"assets/images/Iqbal.jpeg","assets/images/Sarang.jpeg","assets/images/Ali.jpeg","assets/images/Ahmed.jpeg","assets/images/Mushtaque.jpeg","assets/images/Iqbal2.jpeg","assets/images/sarang2.jpeg","assets/images/sher.jpeg","assets/images/MB.jpeg","assets/images/girl.jpeg"};
+// var email = TextEditingController();
+// var password = TextEditingController();
+// var num1 = TextEditingController();
+// var num2 = TextEditingController();
+// DateTime? datepicked;
+// TimeOfDay? timepicked;
+// void callBack() {
+//   print("Button clicked");
+// }
 
-  @override
-  Widget build(BuildContext context) {
-    // var date_time = DateTime.now();
-    // var date = {
-    //   Text("Day : ${date_time.day}"),
-    //   Text("Month : ${date_time.month}"),
-    //   Text("Year : ${date_time.year}"),
-    //   Text(
-    //     "Time : ${date_time.hour} : ${date_time.minute} : ${date_time.second} ",
-    //   ),
-    // };
-    // return DefaultTabController(
-    //   length: 5,
-    // child:
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        centerTitle: true,
+// @override
+// Widget build(BuildContext context) {
+// var date_time = DateTime.now();
+// var date = {
+//   Text("Day : ${date_time.day}"),
+//   Text("Month : ${date_time.month}"),
+//   Text("Year : ${date_time.year}"),
+//   Text(
+//     "Time : ${date_time.hour} : ${date_time.minute} : ${date_time.second} ",
+//   ),
+// };
+// return DefaultTabController(
+//   length: 5,
+// child:
+// return Scaffold(
+//   appBar: AppBar(
+//     backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+//     centerTitle: true,
 
-        // title: Text(widget.title),
-        // bottom: TabBar(
-        //   tabs: [
-        //     Tab(text: "Home"),
-        //     Tab(text: "Contacts"),
-        //     Tab(text: "Settings")
-        //   ],
-        // ),
-      ),
+// title: Text(widget.title),
+// bottom: TabBar(
+//   tabs: [
+//     Tab(text: "Home"),
+//     Tab(text: "Contacts"),
+//     Tab(text: "Settings")
+//   ],
+// ),
+// ),
 
-      // body: Container(
-      //   color: Colors.blue,
-      //   // child: Text("Hello welcome to flutter"),
-      //   alignment: Alignment.center,
-      //   child: Container(
-      //     width: 400,
-      //     height: 220,
-      //     // padding: EdgeInsets.all(10),
-      //     // margin: EdgeInsets.all(20),
-      //     decoration: BoxDecoration(
-      //       color: const Color.fromARGB(255, 22, 247, 120),
-      //       // borderRadius: BorderRadius.only(topLeft:Radius.circular(100),bottomRight: Radius.circular(100)),
-      //       border: Border.all(
-      //         color: Colors.white,
-      //         width: 5
-      //       ),
-      //       boxShadow:[
-      //          BoxShadow(
-      //           blurRadius: 11,
-      //           spreadRadius: 10,
-      //           color: Colors.black
+// body: Container(
+//   color: Colors.blue,
+//   // child: Text("Hello welcome to flutter"),
+//   alignment: Alignment.center,
+//   child: Container(
+//     width: 400,
+//     height: 220,
+//     // padding: EdgeInsets.all(10),
+//     // margin: EdgeInsets.all(20),
+//     decoration: BoxDecoration(
+//       color: const Color.fromARGB(255, 22, 247, 120),
+//       // borderRadius: BorderRadius.only(topLeft:Radius.circular(100),bottomRight: Radius.circular(100)),
+//       border: Border.all(
+//         color: Colors.white,
+//         width: 5
+//       ),
+//       boxShadow:[
+//          BoxShadow(
+//           blurRadius: 11,
+//           spreadRadius: 10,
+//           color: Colors.black
 
-      //         ),
-      //       ],
-      //       shape: BoxShape.circle,
+//         ),
+//       ],
+//       shape: BoxShape.circle,
 
-      //     ),
+//     ),
 
-      //     alignment: Alignment.center,
-      //     child: Text("This is Muhammad Iqbal"),
-      //   ),
-      // ),
-      // body : Text('Hello flutter developers', style : TextStyle(
-      //   fontSize: 20,
-      //   color: Colors.white,
-      //   backgroundColor: Colors.blue,
-      //   fontWeight: FontWeight.bold,
-      //   fontStyle: FontStyle.italic,
+//     alignment: Alignment.center,
+//     child: Text("This is Muhammad Iqbal"),
+//   ),
+// ),
+// body : Text('Hello flutter developers', style : TextStyle(
+//   fontSize: 20,
+//   color: Colors.white,
+//   backgroundColor: Colors.blue,
+//   fontWeight: FontWeight.bold,
+//   fontStyle: FontStyle.italic,
 
-      // ),),
-      // body: TextButton(
-      //   onPressed: () {
-      //     print("Hello world 22");
-      //   },
-      //   child: Text("Click Me"),
-      // ),
-      // body: ElevatedButton(
-      //   onPressed: () {
-      //     print("Hello world 33");
-      //   },
-      //   child: Text("Click Me"),
-      // ),
-      // body: OutlinedButton(
-      //   onPressed: () {
-      //     print("Hello world 44");
-      //   },
-      //   child: Text("click me"),
-      // ),
-      // body : Image.asset(r"assets/images/pic.jpg")
-      // body:Container(
-      //   width : 300,
-      // child : Row(
-      //   // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      //   mainAxisAlignment: MainAxisAlignment.center,
-      //   crossAxisAlignment: CrossAxisAlignment.center,
-      //   children: [
-      //        Text("Mr."),
-      //        Text("Muhammad"),
-      //        Text("Iqbal")
-      //   ],
-      // )
-      // child: Column(
-      //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      //   crossAxisAlignment: CrossAxisAlignment.start,
-      //   children: [
-      //     Text("M"),
-      //     Text("U"),
-      //     Text("E"),
-      //     Text("T")
-      //   ],
-      // ),
+// ),),
+// body: TextButton(
+//   onPressed: () {
+//     print("Hello world 22");
+//   },
+//   child: Text("Click Me"),
+// ),
+// body: ElevatedButton(
+//   onPressed: () {
+//     print("Hello world 33");
+//   },
+//   child: Text("Click Me"),
+// ),
+// body: OutlinedButton(
+//   onPressed: () {
+//     print("Hello world 44");
+//   },
+//   child: Text("click me"),
+// ),
+// body : Image.asset(r"assets/images/pic.jpg")
+// body:Container(
+//   width : 300,
+// child : Row(
+//   // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//   mainAxisAlignment: MainAxisAlignment.center,
+//   crossAxisAlignment: CrossAxisAlignment.center,
+//   children: [
+//        Text("Mr."),
+//        Text("Muhammad"),
+//        Text("Iqbal")
+//   ],
+// )
+// child: Column(
+//   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//   crossAxisAlignment: CrossAxisAlignment.start,
+//   children: [
+//     Text("M"),
+//     Text("U"),
+//     Text("E"),
+//     Text("T")
+//   ],
+// ),
 
-      //small ui
-      // body: Center(
-      //   child: Container(
-      //     height: 500,
-      //     width: 300,
-      //     decoration: BoxDecoration(
-      //       borderRadius: BorderRadius.circular(20),
-      //       border: Border.all(color: Colors.black, width: 2),
-      //     ),
-      //     child: Column(
-      //       children: [
-      //         Text(
-      //           "Profile",
-      //           style: TextStyle(
-      //             color: const Color.fromARGB(255, 124, 215, 238),
-      //             fontSize: 20,
-      //             fontWeight: FontWeight.bold,
-      //           ),
-      //         ),
-      //         ClipRRect(
-      //           borderRadius: BorderRadius.circular(20),
-      //           child: SizedBox(
-      //             height: 250,
-      //             width: 270,
-      //             child: Image.asset(
-      //               "assets/images/pic.jpg",
-      //               width: double.infinity,
-      //               fit: BoxFit.fill,
-      //             ),
-      //           ),
-      //         ),
-      //         Container(
-      //           // padding: EdgeInsets.all(20),
-      //           padding: EdgeInsets.only(left: 20, top: 20, right: 20, bottom: 10),
+//small ui
+// body: Center(
+//   child: Container(
+//     height: 500,
+//     width: 300,
+//     decoration: BoxDecoration(
+//       borderRadius: BorderRadius.circular(20),
+//       border: Border.all(color: Colors.black, width: 2),
+//     ),
+//     child: Column(
+//       children: [
+//         Text(
+//           "Profile",
+//           style: TextStyle(
+//             color: const Color.fromARGB(255, 124, 215, 238),
+//             fontSize: 20,
+//             fontWeight: FontWeight.bold,
+//           ),
+//         ),
+//         ClipRRect(
+//           borderRadius: BorderRadius.circular(20),
+//           child: SizedBox(
+//             height: 250,
+//             width: 270,
+//             child: Image.asset(
+//               "assets/images/pic.jpg",
+//               width: double.infinity,
+//               fit: BoxFit.fill,
+//             ),
+//           ),
+//         ),
+//         Container(
+//           // padding: EdgeInsets.all(20),
+//           padding: EdgeInsets.only(left: 20, top: 20, right: 20, bottom: 10),
 
-      //           child: Text("Hi, This is Muhammad Iqbal . I am undergradute student at Mehran university Jamshoro currently learning flutter ",
-      //               style: TextStyle(
-      //                 fontWeight: FontWeight.bold
-      //               ),),
-      //         ),
-      //         Container(
-      //           padding: EdgeInsets.only(left: 20,bottom: 10),
-      //           alignment: Alignment.centerLeft,
-      //           child: Text("Contact me : 0309-3196901", style: TextStyle(
-      //             fontWeight: FontWeight.bold
-      //            ),
-      //           ),
-      //         ),
-      //         Row(
-      //           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      //           children: [
-      //             ElevatedButton(onPressed: (){}, child: Text("Facebook",style: TextStyle(fontWeight: FontWeight.bold),)),
-      //             ElevatedButton(onPressed: (){}, child: Text("Whatsapp",style: TextStyle(fontWeight: FontWeight.bold)))
-      //           ],
-      //         ),
-      //         Container(
-      //           padding: EdgeInsets.only(top: 15),
-      //           child: Row(
-      //           mainAxisAlignment: MainAxisAlignment.center,
-      //           children: [
-      //             Text("Rate us :      ",style: TextStyle(fontWeight: FontWeight.bold),),
-      //             Image.asset("assets/images/rating.png",width: 20,height: 20,fit:BoxFit.fill),
-      //             Image.asset("assets/images/rating.png",width: 20,height: 20,fit:BoxFit.fill),
-      //             Image.asset("assets/images/rating.png",width: 20,height: 20,fit:BoxFit.fill),
-      //             Image.asset("assets/images/rating.png",width: 20,height: 20,fit:BoxFit.fill),
-      //             Image.asset("assets/images/rating.png",width: 20,height: 20,fit:BoxFit.fill),
-      //           ],
-      //         )
-      //         )
-      //       ],
-      //     ),
-      //   ),
-      // ),
-      // body : InkWell(
-      //   onTap: () => print("Tapped"),
-      //   child : Container(
-      //   width: 200,
-      //   height: 200,
-      //   color: Colors.blue,
-      // )
-      // )
-      // Scroll View
-      // body: SingleChildScrollView(
-      //   child: Column(
-      //     children: [
-      //       SingleChildScrollView(
-      //         scrollDirection: Axis.horizontal,
-      //         child: Row(
-      //           children:[
-      //              Container(
-      //             height: 200,
-      //             width: 400,
-      //             margin: EdgeInsets.only(right: 10),
-      //             color: const Color.fromARGB(255, 96, 139, 103),
-      //           ),
-      //           Container(
-      //             height: 200,
-      //             width: 400,
-      //             margin: EdgeInsets.only(right: 10),
-      //             color: const Color.fromARGB(255, 240, 206, 14),
-      //           ),
-      //           Container(
-      //             height: 200,
-      //             margin: EdgeInsets.only(right: 10),
-      //             color: const Color.fromARGB(255, 239, 118, 5),
-      //             width: 400,
-      //           ),
-      //           Container(
-      //             height: 200,
-      //             margin: EdgeInsets.only(right: 10),
-      //             color: const Color.fromARGB(255, 245, 25, 183),
-      //             width: 400,
-      //           )
-      //           ]
-      //         ),
-      //       ),
-      //       Container(
-      //         height: 200,
-      //         margin: EdgeInsets.only(bottom: 10),
-      //         color: const Color.fromARGB(255, 100, 192, 238),
-      //       ),
-      //       Container(
-      //         height: 200,
-      //         margin: EdgeInsets.only(bottom: 10),
-      //         color: const Color.fromARGB(255, 117, 210, 125),
-      //       ),
-      //       Container(
-      //         height: 200,
-      //         margin: EdgeInsets.only(bottom: 10),
-      //         color: const Color.fromARGB(255, 238, 80, 219),
-      //       )
-      //     ],
-      //   ),
-      // ),
-      // List View
-      // body: Container(
-      //   width: 150,
-      //   height: 100,
-      //   margin: EdgeInsets.all(10),
-      //   decoration: BoxDecoration(
-      //     borderRadius: BorderRadius.circular(10),
-      //     color: Colors.blue,
-      //   ),
-      //   child: ListView.separated(itemBuilder: (context, index) {
-      //     return Text(arr.elementAt(index),style: TextStyle(fontSize: 21,fontWeight: FontWeight.bold),);
-      //   },
-      //   itemCount: arr.length,
-      //   separatorBuilder: (context, index) => Divider(height: 4,),
-      //   // reverse: true,
-      //   // scrollDirection: Axis.horizontal,
-      //   ),
-      // ),
-      //Expanded widget
-      // body:Row(
-      //   children:
-      //   [
-      //     Expanded(
-      //       flex: 2,
-      //       child: Container
-      //     (
-      //     height: 200,
-      //     color: Colors.blueGrey,
+//           child: Text("Hi, This is Muhammad Iqbal . I am undergradute student at Mehran university Jamshoro currently learning flutter ",
+//               style: TextStyle(
+//                 fontWeight: FontWeight.bold
+//               ),),
+//         ),
+//         Container(
+//           padding: EdgeInsets.only(left: 20,bottom: 10),
+//           alignment: Alignment.centerLeft,
+//           child: Text("Contact me : 0309-3196901", style: TextStyle(
+//             fontWeight: FontWeight.bold
+//            ),
+//           ),
+//         ),
+//         Row(
+//           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//           children: [
+//             ElevatedButton(onPressed: (){}, child: Text("Facebook",style: TextStyle(fontWeight: FontWeight.bold),)),
+//             ElevatedButton(onPressed: (){}, child: Text("Whatsapp",style: TextStyle(fontWeight: FontWeight.bold)))
+//           ],
+//         ),
+//         Container(
+//           padding: EdgeInsets.only(top: 15),
+//           child: Row(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             Text("Rate us :      ",style: TextStyle(fontWeight: FontWeight.bold),),
+//             Image.asset("assets/images/rating.png",width: 20,height: 20,fit:BoxFit.fill),
+//             Image.asset("assets/images/rating.png",width: 20,height: 20,fit:BoxFit.fill),
+//             Image.asset("assets/images/rating.png",width: 20,height: 20,fit:BoxFit.fill),
+//             Image.asset("assets/images/rating.png",width: 20,height: 20,fit:BoxFit.fill),
+//             Image.asset("assets/images/rating.png",width: 20,height: 20,fit:BoxFit.fill),
+//           ],
+//         )
+//         )
+//       ],
+//     ),
+//   ),
+// ),
+// body : InkWell(
+//   onTap: () => print("Tapped"),
+//   child : Container(
+//   width: 200,
+//   height: 200,
+//   color: Colors.blue,
+// )
+// )
+// Scroll View
+// body: SingleChildScrollView(
+//   child: Column(
+//     children: [
+//       SingleChildScrollView(
+//         scrollDirection: Axis.horizontal,
+//         child: Row(
+//           children:[
+//              Container(
+//             height: 200,
+//             width: 400,
+//             margin: EdgeInsets.only(right: 10),
+//             color: const Color.fromARGB(255, 96, 139, 103),
+//           ),
+//           Container(
+//             height: 200,
+//             width: 400,
+//             margin: EdgeInsets.only(right: 10),
+//             color: const Color.fromARGB(255, 240, 206, 14),
+//           ),
+//           Container(
+//             height: 200,
+//             margin: EdgeInsets.only(right: 10),
+//             color: const Color.fromARGB(255, 239, 118, 5),
+//             width: 400,
+//           ),
+//           Container(
+//             height: 200,
+//             margin: EdgeInsets.only(right: 10),
+//             color: const Color.fromARGB(255, 245, 25, 183),
+//             width: 400,
+//           )
+//           ]
+//         ),
+//       ),
+//       Container(
+//         height: 200,
+//         margin: EdgeInsets.only(bottom: 10),
+//         color: const Color.fromARGB(255, 100, 192, 238),
+//       ),
+//       Container(
+//         height: 200,
+//         margin: EdgeInsets.only(bottom: 10),
+//         color: const Color.fromARGB(255, 117, 210, 125),
+//       ),
+//       Container(
+//         height: 200,
+//         margin: EdgeInsets.only(bottom: 10),
+//         color: const Color.fromARGB(255, 238, 80, 219),
+//       )
+//     ],
+//   ),
+// ),
+// List View
+// body: Container(
+//   width: 150,
+//   height: 100,
+//   margin: EdgeInsets.all(10),
+//   decoration: BoxDecoration(
+//     borderRadius: BorderRadius.circular(10),
+//     color: Colors.blue,
+//   ),
+//   child: ListView.separated(itemBuilder: (context, index) {
+//     return Text(arr.elementAt(index),style: TextStyle(fontSize: 21,fontWeight: FontWeight.bold),);
+//   },
+//   itemCount: arr.length,
+//   separatorBuilder: (context, index) => Divider(height: 4,),
+//   // reverse: true,
+//   // scrollDirection: Axis.horizontal,
+//   ),
+// ),
+//Expanded widget
+// body:Row(
+//   children:
+//   [
+//     Expanded(
+//       flex: 2,
+//       child: Container
+//     (
+//     height: 200,
+//     color: Colors.blueGrey,
 
-      //   )),
-      //   Expanded(
-      //     flex:3,
-      //     child: Container(
-      //     height: 200,
-      //     color: const Color.fromARGB(255, 71, 145, 182),
-      //   )),
-      //   ]
-      // )
-      //contact app ui
-      // body: ListView.separated(
-      //   itemBuilder: (context, Index) {
-      //     var path = arr2.elementAt(Index);
-      //     return Card(
-      //       elevation: 10,
-      //       child: ListTile(
-      //          onTap: () {
-      //           _showSimOptions(context);
-      //         },
-      //         leading: Container(
-      //           height: 50,
-      //           width: 50,
-      //           child: CircleAvatar(
-      //             backgroundImage: AssetImage(path),
-      //           ),
-      //         ),
-      //         title: Text(arr.elementAt(Index), style: Theme.of(context).textTheme.headlineLarge,),
-      //         subtitle: Text("03093196901",style: Theme.of(context).textTheme.titleSmall,),
-      //         trailing: Icon(Icons.add),
-      //       ),
-      //     );
-      //   },
-      //   itemCount: arr.length,
-      //   separatorBuilder: (context, Index) => Divider(height: 8),
-      // ),
-      // card ui design
-      // body: Container(
-      //   // color: Colors.blueGrey,
-      //   child: Center(
-      //     child: Card(
-      //       elevation: 40,
-      //       child: Container(
-      //         width: 470,
-      //         height: 250,
-      //         decoration: BoxDecoration(
-      //           borderRadius: BorderRadius.circular(20),
-      //           border: Border.all(color: Colors.black,width: 2),
-      //           color: Colors.black,
-      //         ),
-      //         child: Row(
-      //           children: [
-      //             Padding(
-      //               padding: EdgeInsets.all(5),
-      //               child: Material(
-      //                 elevation: 5,
-      //                 shadowColor: Colors.white,
-      //                 shape: CircleBorder(),
-      //                 child: CircleAvatar(
-      //                   backgroundImage: AssetImage('assets/images/pic.jpg'),
-      //                   radius: 80,
-      //                 ),
-      //               ),
-      //             ),
-      //              Expanded(
-      //                 child: Padding(
-      //                   padding: const EdgeInsets.only(top:7,left: 7,right: 5,bottom: 5),
-      //                   child: Column(
-      //                     // mainAxisAlignment: MainAxisAlignment.values[2],
-      //                     // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      //                     crossAxisAlignment: CrossAxisAlignment.start,
-      //                     children: [
-      //                       Card(
-      //                         elevation: 5,
-      //                         color: Colors.black,
-      //                         shadowColor: Colors.white,
-      //                         child: Padding(
-      //                           padding: const EdgeInsets.all(5.0),
-      //                           child: Text("Name : Muhammad Iqbal",style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),),
-      //                         )),
-      //                          Card(
-      //                         elevation: 5,
-      //                         color: Colors.black,
-      //                         shadowColor: Colors.white,
-      //                         child: Padding(
-      //                           padding: const EdgeInsets.all(5.0),
-      //                           // child: Text("Department : \u00A0\u00A0Software \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Engineering",style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),),
-      //                            child: Row(
-      //                             children: [
-      //                               Text("Department :     ",style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),),
-      //                               Column(
-      //                                 children: [
-      //                                   Text("Software",style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),),
-      //                                   Text("Engineering",style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),),
-      //                                 ],
-      //                               ),
-      //                             ],
-      //                             )
+//   )),
+//   Expanded(
+//     flex:3,
+//     child: Container(
+//     height: 200,
+//     color: const Color.fromARGB(255, 71, 145, 182),
+//   )),
+//   ]
+// )
+//contact app ui
+// body: ListView.separated(
+//   itemBuilder: (context, Index) {
+//     var path = arr2.elementAt(Index);
+//     return Card(
+//       elevation: 10,
+//       child: ListTile(
+//          onTap: () {
+//           _showSimOptions(context);
+//         },
+//         leading: Container(
+//           height: 50,
+//           width: 50,
+//           child: CircleAvatar(
+//             backgroundImage: AssetImage(path),
+//           ),
+//         ),
+//         title: Text(arr.elementAt(Index), style: Theme.of(context).textTheme.headlineLarge,),
+//         subtitle: Text("03093196901",style: Theme.of(context).textTheme.titleSmall,),
+//         trailing: Icon(Icons.add),
+//       ),
+//     );
+//   },
+//   itemCount: arr.length,
+//   separatorBuilder: (context, Index) => Divider(height: 8),
+// ),
+// card ui design
+// body: Container(
+//   // color: Colors.blueGrey,
+//   child: Center(
+//     child: Card(
+//       elevation: 40,
+//       child: Container(
+//         width: 470,
+//         height: 250,
+//         decoration: BoxDecoration(
+//           borderRadius: BorderRadius.circular(20),
+//           border: Border.all(color: Colors.black,width: 2),
+//           color: Colors.black,
+//         ),
+//         child: Row(
+//           children: [
+//             Padding(
+//               padding: EdgeInsets.all(5),
+//               child: Material(
+//                 elevation: 5,
+//                 shadowColor: Colors.white,
+//                 shape: CircleBorder(),
+//                 child: CircleAvatar(
+//                   backgroundImage: AssetImage('assets/images/pic.jpg'),
+//                   radius: 80,
+//                 ),
+//               ),
+//             ),
+//              Expanded(
+//                 child: Padding(
+//                   padding: const EdgeInsets.only(top:7,left: 7,right: 5,bottom: 5),
+//                   child: Column(
+//                     // mainAxisAlignment: MainAxisAlignment.values[2],
+//                     // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//                     crossAxisAlignment: CrossAxisAlignment.start,
+//                     children: [
+//                       Card(
+//                         elevation: 5,
+//                         color: Colors.black,
+//                         shadowColor: Colors.white,
+//                         child: Padding(
+//                           padding: const EdgeInsets.all(5.0),
+//                           child: Text("Name : Muhammad Iqbal",style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),),
+//                         )),
+//                          Card(
+//                         elevation: 5,
+//                         color: Colors.black,
+//                         shadowColor: Colors.white,
+//                         child: Padding(
+//                           padding: const EdgeInsets.all(5.0),
+//                           // child: Text("Department : \u00A0\u00A0Software \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Engineering",style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),),
+//                            child: Row(
+//                             children: [
+//                               Text("Department :     ",style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),),
+//                               Column(
+//                                 children: [
+//                                   Text("Software",style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),),
+//                                   Text("Engineering",style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),),
+//                                 ],
+//                               ),
+//                             ],
+//                             )
 
-      //                                 )),
+//                                 )),
 
-      //                       Card(
-      //                         elevation: 5,
-      //                         color: Colors.black,
-      //                         shadowColor: Colors.white,
-      //                         child: Padding(
-      //                           padding: const EdgeInsets.all(5.0),
-      //                           child: Text("Year/Semester : 3rd/6th",style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),),
-      //                           ),
-      //                         ),
-      //                       Card(
-      //                         elevation: 5,
-      //                         color: Colors.black,
-      //                         shadowColor: Colors.white,
-      //                         child: Padding(
-      //                           padding: const EdgeInsets.all(5.0),
-      //                           child: Text("University : Mehran university of Engineering and Technology Jamshoro",softWrap: true,style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),),
-      //                         )),
-      //                       Card(
-      //                         elevation: 5,
-      //                         color: Colors.black,
-      //                         shadowColor: Colors.white,
-      //                         child: Padding(
-      //                           padding: const EdgeInsets.all(5.0),
-      //                           child: Text("Current_Skill : Flutter(App Developement)",style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),)
-      //                         ))
-      //                     ],
-      //                   ),
-      //                 ),
+//                       Card(
+//                         elevation: 5,
+//                         color: Colors.black,
+//                         shadowColor: Colors.white,
+//                         child: Padding(
+//                           padding: const EdgeInsets.all(5.0),
+//                           child: Text("Year/Semester : 3rd/6th",style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),),
+//                           ),
+//                         ),
+//                       Card(
+//                         elevation: 5,
+//                         color: Colors.black,
+//                         shadowColor: Colors.white,
+//                         child: Padding(
+//                           padding: const EdgeInsets.all(5.0),
+//                           child: Text("University : Mehran university of Engineering and Technology Jamshoro",softWrap: true,style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),),
+//                         )),
+//                       Card(
+//                         elevation: 5,
+//                         color: Colors.black,
+//                         shadowColor: Colors.white,
+//                         child: Padding(
+//                           padding: const EdgeInsets.all(5.0),
+//                           child: Text("Current_Skill : Flutter(App Developement)",style: TextStyle(fontFamily: 'myfonts2',fontSize: 10,color: Colors.white),)
+//                         ))
+//                     ],
+//                   ),
+//                 ),
 
-      //             )
-      //           ],
-      //         ),
-      //       ),
-      //     ),
-      //   ),
-      // ),
-      //current date and time
-      // body: ListView.separated(
-      //   itemBuilder: (context, index) {
-      //     return date.elementAt(index);
-      //   },
-      //   scrollDirection: Axis.horizontal,
-      //   itemCount: 4,
-      //   separatorBuilder: (context, index) => VerticalDivider(width: 20),
-      // ),
-      //DateFormat
-      // body: Column(
-      //   children: [
-      //     Text("current time : ${DateFormat('Hms').format(date_time)} "),
-      //     Text("current time : ${DateFormat('jms').format(date_time)} "),
-      //     Text("Day          : ${DateFormat('EEEE').format(date_time)} "),
-      //     Text("current Date : ${DateFormat('dMMMMy').format(date_time)} "),
-      //     Text("current Quarter : ${DateFormat('QQQQ').format(date_time)} ")
-      //   ],
-      // ),
-      //Text Field (Login)
-      // body: Center(
-      //   child: Container(
-      //     width: 300,
-      //     child: Column(
-      //       mainAxisAlignment: MainAxisAlignment.center,
-      //       children: [
-      //         TextField(
-      //           controller: email,
-      //           // enabled: false,
-      //           decoration: InputDecoration(
-      //             hintText: "user_name@gmail.com",
-      //             prefixIcon: Icon(Icons.email),
-      //             enabledBorder: OutlineInputBorder(
-      //               borderRadius: BorderRadius.circular(11),
-      //               borderSide: BorderSide(color: Colors.blue),
-      //             ),
-      //             disabledBorder: OutlineInputBorder(
-      //               borderRadius: BorderRadius.circular(11),
-      //               borderSide: BorderSide(color: Colors.deepOrange),
-      //             ),
-      //             focusedBorder: OutlineInputBorder(
-      //               borderRadius: BorderRadius.circular(11),
-      //               borderSide: BorderSide(color: Colors.green),
-      //             ),
-      //           ),
-      //         ),
-      //         Container(height: 15),
-      //         TextField(
-      //           controller: password,
-      //           keyboardType: TextInputType.visiblePassword,
-      //           obscureText: true,
-      //           obscuringCharacter: '*',
-      //           // enabled: false,
-      //           decoration: InputDecoration(
-      //             hintText: "Enter password",
-      //             prefixIcon: Icon(Icons.password),
-      //             suffixIcon: IconButton(
-      //               onPressed: () {},
-      //               icon: Icon(Icons.remove_red_eye),
-      //             ),
-      //             enabledBorder: OutlineInputBorder(
-      //               borderRadius: BorderRadius.circular(11),
-      //               borderSide: BorderSide(color: Colors.blue),
-      //             ),
-      //             disabledBorder: OutlineInputBorder(
-      //               borderRadius: BorderRadius.circular(11),
-      //               borderSide: BorderSide(color: Colors.deepOrange),
-      //             ),
-      //             focusedBorder: OutlineInputBorder(
-      //               borderRadius: BorderRadius.circular(11),
-      //               borderSide: BorderSide(color: Colors.green),
-      //             ),
-      //           ),
-      //         ),
-      //         Padding(
-      //           padding: const EdgeInsets.all(8.0),
-      //           child: ElevatedButton(
-      //             onPressed: () {
-      //               var emailtext = email.text.toString();
-      //               var passwordtext = password.text.toString();
-      //               print("Email : $emailtext",);
-      //               print("Password : $passwordtext",);
-      //             },
-      //             child: Text("Login"),
-      //           ),
-      //         ),
-      //       ],
-      //     ),
-      //   ),
-      // ),
-      //       body: Center(
-      //     child: Container(
-      //     height: 260,
-      //     width: 200,
-      //     child: Column(
-      //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      //       children: [
-      //         TextField(
-      //           controller: num1,
-      //           keyboardType: TextInputType.number,
-      //           inputFormatters: [
-      //             FilteringTextInputFormatter.digitsOnly
-      //           ],
-      //           decoration: InputDecoration(
-      //             hintText: "Enter first number",
-      //             border: OutlineInputBorder(),
-      //           ),
-      //         ),
+//             )
+//           ],
+//         ),
+//       ),
+//     ),
+//   ),
+// ),
+//current date and time
+// body: ListView.separated(
+//   itemBuilder: (context, index) {
+//     return date.elementAt(index);
+//   },
+//   scrollDirection: Axis.horizontal,
+//   itemCount: 4,
+//   separatorBuilder: (context, index) => VerticalDivider(width: 20),
+// ),
+//DateFormat
+// body: Column(
+//   children: [
+//     Text("current time : ${DateFormat('Hms').format(date_time)} "),
+//     Text("current time : ${DateFormat('jms').format(date_time)} "),
+//     Text("Day          : ${DateFormat('EEEE').format(date_time)} "),
+//     Text("current Date : ${DateFormat('dMMMMy').format(date_time)} "),
+//     Text("current Quarter : ${DateFormat('QQQQ').format(date_time)} ")
+//   ],
+// ),
+//Text Field (Login)
+// body: Center(
+//   child: Container(
+//     width: 300,
+//     child: Column(
+//       mainAxisAlignment: MainAxisAlignment.center,
+//       children: [
+//         TextField(
+//           controller: email,
+//           // enabled: false,
+//           decoration: InputDecoration(
+//             hintText: "user_name@gmail.com",
+//             prefixIcon: Icon(Icons.email),
+//             enabledBorder: OutlineInputBorder(
+//               borderRadius: BorderRadius.circular(11),
+//               borderSide: BorderSide(color: Colors.blue),
+//             ),
+//             disabledBorder: OutlineInputBorder(
+//               borderRadius: BorderRadius.circular(11),
+//               borderSide: BorderSide(color: Colors.deepOrange),
+//             ),
+//             focusedBorder: OutlineInputBorder(
+//               borderRadius: BorderRadius.circular(11),
+//               borderSide: BorderSide(color: Colors.green),
+//             ),
+//           ),
+//         ),
+//         Container(height: 15),
+//         TextField(
+//           controller: password,
+//           keyboardType: TextInputType.visiblePassword,
+//           obscureText: true,
+//           obscuringCharacter: '*',
+//           // enabled: false,
+//           decoration: InputDecoration(
+//             hintText: "Enter password",
+//             prefixIcon: Icon(Icons.password),
+//             suffixIcon: IconButton(
+//               onPressed: () {},
+//               icon: Icon(Icons.remove_red_eye),
+//             ),
+//             enabledBorder: OutlineInputBorder(
+//               borderRadius: BorderRadius.circular(11),
+//               borderSide: BorderSide(color: Colors.blue),
+//             ),
+//             disabledBorder: OutlineInputBorder(
+//               borderRadius: BorderRadius.circular(11),
+//               borderSide: BorderSide(color: Colors.deepOrange),
+//             ),
+//             focusedBorder: OutlineInputBorder(
+//               borderRadius: BorderRadius.circular(11),
+//               borderSide: BorderSide(color: Colors.green),
+//             ),
+//           ),
+//         ),
+//         Padding(
+//           padding: const EdgeInsets.all(8.0),
+//           child: ElevatedButton(
+//             onPressed: () {
+//               var emailtext = email.text.toString();
+//               var passwordtext = password.text.toString();
+//               print("Email : $emailtext",);
+//               print("Password : $passwordtext",);
+//             },
+//             child: Text("Login"),
+//           ),
+//         ),
+//       ],
+//     ),
+//   ),
+// ),
+//       body: Center(
+//     child: Container(
+//     height: 260,
+//     width: 200,
+//     child: Column(
+//       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//       children: [
+//         TextField(
+//           controller: num1,
+//           keyboardType: TextInputType.number,
+//           inputFormatters: [
+//             FilteringTextInputFormatter.digitsOnly
+//           ],
+//           decoration: InputDecoration(
+//             hintText: "Enter first number",
+//             border: OutlineInputBorder(),
+//           ),
+//         ),
 
-      //         TextField(
-      //           controller: num2,
-      //           keyboardType: TextInputType.number,
-      //           inputFormatters: [
-      //             FilteringTextInputFormatter.digitsOnly
-      //           ],
-      //           decoration: InputDecoration(
-      //             hintText: "Enter second number",
-      //             border: OutlineInputBorder(),
-      //           ),
-      //         ),
+//         TextField(
+//           controller: num2,
+//           keyboardType: TextInputType.number,
+//           inputFormatters: [
+//             FilteringTextInputFormatter.digitsOnly
+//           ],
+//           decoration: InputDecoration(
+//             hintText: "Enter second number",
+//             border: OutlineInputBorder(),
+//           ),
+//         ),
 
-      //         // 🔹 Operator Input
-      //         TextField(
-      //           controller: operator,
-      //           decoration: InputDecoration(
-      //             hintText: "Enter operator (+, -, *, /)",
-      //             border: OutlineInputBorder(),
-      //           ),
-      //         ),
+//         // 🔹 Operator Input
+//         TextField(
+//           controller: operator,
+//           decoration: InputDecoration(
+//             hintText: "Enter operator (+, -, *, /)",
+//             border: OutlineInputBorder(),
+//           ),
+//         ),
 
-      //         ElevatedButton(
-      //           onPressed: () {
-      //             var number1 = int.tryParse(num1.text);
-      //             var number2 = int.tryParse(num2.text);
-      //             var op = operator.text;
+//         ElevatedButton(
+//           onPressed: () {
+//             var number1 = int.tryParse(num1.text);
+//             var number2 = int.tryParse(num2.text);
+//             var op = operator.text;
 
-      //             if (number1 != null && number2 != null && op.isNotEmpty) {
-      //               var result;
+//             if (number1 != null && number2 != null && op.isNotEmpty) {
+//               var result;
 
-      //               switch (op) {
-      //                 case "+":
-      //                   result = number1 + number2;
-      //                   break;
+//               switch (op) {
+//                 case "+":
+//                   result = number1 + number2;
+//                   break;
 
-      //                 case "-":
-      //                   result = number1 - number2;
-      //                   break;
+//                 case "-":
+//                   result = number1 - number2;
+//                   break;
 
-      //                 case "*":
-      //                   result = number1 * number2;
-      //                   break;
+//                 case "*":
+//                   result = number1 * number2;
+//                   break;
 
-      //                 case "/":
-      //                   if (number2 != 0) {
-      //                     result = number1 / number2;
-      //                   } else {
-      //                     print("Cannot divide by zero");
-      //                     return;
-      //                   }
-      //                   break;
+//                 case "/":
+//                   if (number2 != 0) {
+//                     result = number1 / number2;
+//                   } else {
+//                     print("Cannot divide by zero");
+//                     return;
+//                   }
+//                   break;
 
-      //                 default:
-      //                   print("Invalid operator");
-      //                   return;
-      //               }
+//                 default:
+//                   print("Invalid operator");
+//                   return;
+//               }
 
-      //               print("Result: $result");
-      //             } else {
-      //               print("Please enter valid inputs");
-      //             }
-      //           },
-      //           child: Text("Calculate"),
-      //         ),
-      //       ],
-      //     ),
-      //   ),
-      // ),
-      //Date picker and Time picker
-      // body: Center(
-      //   child: Column(
-      //     mainAxisAlignment: MainAxisAlignment.center,
-      //     children: [
-      //       Text( datepicked !=null
-      //        ?  DateFormat("d MMMM y").format(datepicked!)
-      //        :  "${DateTime.now()}"  ),
-      //       ElevatedButton(
-      //         onPressed: () async {
-      //           final DateTime? pickeddate = await showDatePicker(
-      //             context: context,
-      //             initialDate: DateTime.now(),
-      //             firstDate: DateTime(2020),
-      //             lastDate: DateTime(2030),
-      //           );
+//               print("Result: $result");
+//             } else {
+//               print("Please enter valid inputs");
+//             }
+//           },
+//           child: Text("Calculate"),
+//         ),
+//       ],
+//     ),
+//   ),
+// ),
+//Date picker and Time picker
+// body: Center(
+//   child: Column(
+//     mainAxisAlignment: MainAxisAlignment.center,
+//     children: [
+//       Text( datepicked !=null
+//        ?  DateFormat("d MMMM y").format(datepicked!)
+//        :  "${DateTime.now()}"  ),
+//       ElevatedButton(
+//         onPressed: () async {
+//           final DateTime? pickeddate = await showDatePicker(
+//             context: context,
+//             initialDate: DateTime.now(),
+//             firstDate: DateTime(2020),
+//             lastDate: DateTime(2030),
+//           );
 
-      //           setState(() {
-      //             datepicked=pickeddate;
-      //           });
-      //         },
+//           setState(() {
+//             datepicked=pickeddate;
+//           });
+//         },
 
-      //         child: Text("Select date"),
-      //       ),
-      //       Text( timepicked!=null
-      //       ? timepicked!.format(context)
-      //       : "${TimeOfDay.now()}"),
-      //       ElevatedButton(
-      //         onPressed: () async {
-      //           TimeOfDay? pickedTime = await showTimePicker(
-      //             context: context,
-      //             initialTime: TimeOfDay.now(),
-      //             initialEntryMode: TimePickerEntryMode.dial,
-      //           );
-      //           setState(() {
-      //             timepicked=pickedTime;
-      //           });
-      //         },
-      //         child: Text("Select Time"),
-      //       ),
-      //     ],
-      // ),
-      //Callback function
-      // body: Center(
-      //   child: ElevatedButton(
-      //     child: Text("Click me"),
-      //     onPressed :callBack,
-      //   ),
-      // ),
-      //Grid layout
-      // body:GridContainer(),
-      // GridView.extent(
-      //   maxCrossAxisExtent: 200,
-      //   mainAxisSpacing: 8,
-      //   crossAxisSpacing: 8,
-      //   children: [
-      //     Container(color: Colors.blue,),
-      //     Container(color: Colors.amber,),
-      //     Container(color: Colors.orange,),
-      //     Container(color: Colors.green,),
-      //     Container(color: Colors.black,),
-      //     Container(color: Colors.red,),
-      //     Container(color: Colors.brown,),
-      //     Container(color: Colors.pink,),
-      //   ],
-      // )
+//         child: Text("Select date"),
+//       ),
+//       Text( timepicked!=null
+//       ? timepicked!.format(context)
+//       : "${TimeOfDay.now()}"),
+//       ElevatedButton(
+//         onPressed: () async {
+//           TimeOfDay? pickedTime = await showTimePicker(
+//             context: context,
+//             initialTime: TimeOfDay.now(),
+//             initialEntryMode: TimePickerEntryMode.dial,
+//           );
+//           setState(() {
+//             timepicked=pickedTime;
+//           });
+//         },
+//         child: Text("Select Time"),
+//       ),
+//     ],
+// ),
+//Callback function
+// body: Center(
+//   child: ElevatedButton(
+//     child: Text("Click me"),
+//     onPressed :callBack,
+//   ),
+// ),
+//Grid layout
+// body:GridContainer(),
+// GridView.extent(
+//   maxCrossAxisExtent: 200,
+//   mainAxisSpacing: 8,
+//   crossAxisSpacing: 8,
+//   children: [
+//     Container(color: Colors.blue,),
+//     Container(color: Colors.amber,),
+//     Container(color: Colors.orange,),
+//     Container(color: Colors.green,),
+//     Container(color: Colors.black,),
+//     Container(color: Colors.red,),
+//     Container(color: Colors.brown,),
+//     Container(color: Colors.pink,),
+//   ],
+// )
 
-      //  GridView.count(
-      //   crossAxisCount: 3,
-      //   mainAxisSpacing: 8,
-      //   crossAxisSpacing: 10,
-      //   children: [
-      //     Container(color: Colors.blue,),
-      //     Container(color: Colors.amber,),
-      //     Container(color: Colors.orange,),
-      //     Container(color: Colors.green,),
-      //     Container(color: Colors.black,),
-      //     Container(color: Colors.red,),
-      //     Container(color: Colors.brown,),
-      //     Container(color: Colors.pink,),
-      //   ],
-      // ),
-      // )
-      //Stack widget
-      // body : Container(
-      //   height: 300,
-      //   width: 300,
-      //   child: Stack (
-      //     children: [
-      //       Container(
-      //         height: 200,
-      //         width: 200,
-      //         color: Colors.blueGrey,
-      //       ),
-      //       Positioned(
-      //         left: 20,
-      //         top: 20,
-      //         child: Container(
-      //           height: 200,
-      //           width: 200,
-      //           color: Colors.amber,
-      //         ),
-      //       ),
-      //       Positioned(
-      //         top: 40,
-      //         left: 40,
-      //         child: Container(
-      //           height: 200,
-      //           width: 200,
-      //           color: Colors.orange,
-      //         ),
-      //       )
-      //     ],
-      //       ),
-      // )
-      //Icon widget
-      // body: Center(
-      //   child:Icon(
-      //     Icons.play_circle_fill,
-      //     size: 100,
-      //     color: Colors.blueGrey,
-      // ),
-      // )
-      //Custom widget
-      // body: Center(
-      //   child: Column(
-      //     mainAxisAlignment: MainAxisAlignment.center,
-      //     children: [
-      //       Container(
-      //         width: 120,
-      //         child: RoundedBtn(
-      //           btnName: "Login",
-      //           bgColor: Colors.orange,
-      //           callback: () {
-      //             print("Clicked");
-      //           },
-      //           icon: Icon(Icons.login),
-      //         ),
-      //       ),
-      //       Container(height: 20,),
-      //       Container(
-      //         width: 120,
-      //         child: RoundedBtn(
-      //           btnName: "Sign Up",
-      //           callback: () {
-      //             print("pressed");
-      //           },
-      //         ),
-      //       ),
-      //     ],
-      //   ),
-      // ),
-      //Wrap Widget
-      // body:Container(
-      //   width: double.infinity,
-      //   height: double.infinity,
-      //   child:Wrap(
-      //     direction: Axis.vertical,
-      //     spacing: 11,
-      //     runSpacing: 11,
-      //     alignment: WrapAlignment.spaceBetween,
-      //     children: [
-      //       Container(
-      //         width: 300,
-      //         height: 180,
-      //         color: Colors.amber,
-      //       ),
-      //       Container(
-      //         width:300,
-      //         height: 180,
-      //         color: Colors.blue,
-      //       ),
-      //       Container(
-      //         width: 300,
-      //         height: 180,
-      //         color: Colors.brown,
-      //       ),
-      //       Container(
-      //         width: 300,
-      //         height: 180,
-      //         color: Colors.green,
-      //       )
-      //     ],
-      //   )
-      // )
-      //Sized Box
-      //     body: Center(
-      //   child: Padding(
-      //     padding: EdgeInsets.all(20),
-      //     child: Column(
-      //       mainAxisAlignment: MainAxisAlignment.center,
-      //       children: [
-      //         SizedBox(
-      //           width: 300,
-      //           height: 180,
-      //           child: Container(
-      //             decoration: BoxDecoration(
-      //               gradient: LinearGradient(
-      //                 colors: [Colors.blue, Colors.purple],
-      //                 begin: Alignment.topLeft,
-      //                 end: Alignment.bottomRight,
-      //               ),
-      //               borderRadius: BorderRadius.circular(20),
-      //               boxShadow: [
-      //                 BoxShadow(
-      //                   color: Colors.black26,
-      //                   blurRadius: 10,
-      //                   offset: Offset(0, 5),
-      //                 )
-      //               ],
-      //             ),
-      //             child: Center(
-      //               child: Text(
-      //                 'Welcome Back',
-      //                 style: TextStyle(
-      //                   color: Colors.white,
-      //                   fontSize: 24,
-      //                   fontWeight: FontWeight.bold,
-      //                 ),
-      //               ),
-      //             ),
-      //           ),
-      //         ),
-      //         SizedBox(height: 30),
-      //         SizedBox(
-      //           width: 300,
-      //           height: 55,
-      //           child: TextField(
-      //             decoration: InputDecoration(
-      //               hintText: 'Email',
-      //               filled: true,
-      //               fillColor: Colors.grey[200],
-      //               border: OutlineInputBorder(
-      //                 borderRadius: BorderRadius.circular(15),
-      //                 borderSide: BorderSide.none,
-      //               ),
-      //             ),
-      //           ),
-      //         ),
-      //         SizedBox(height: 15),
-      //         SizedBox(
-      //           width: 300,
-      //           height: 55,
-      //           child: TextField(
-      //             obscureText: true,
-      //             decoration: InputDecoration(
-      //               hintText: 'Password',
-      //               filled: true,
-      //               fillColor: Colors.grey[200],
-      //               border: OutlineInputBorder(
-      //                 borderRadius: BorderRadius.circular(15),
-      //                 borderSide: BorderSide.none,
-      //               ),
-      //             ),
-      //           ),
-      //         ),
-      //         SizedBox(height: 25),
-      //         SizedBox(
-      //           width: 300,
-      //           height: 55,
-      //           child: ElevatedButton(
-      //             style: ElevatedButton.styleFrom(
-      //               shape: RoundedRectangleBorder(
-      //                 borderRadius: BorderRadius.circular(15),
-      //               ),
-      //               backgroundColor: Colors.purple,
-      //             ),
-      //             onPressed: () {},
-      //             child: Text(
-      //               'Login',
-      //               style: TextStyle(fontSize: 18),
-      //             ),
-      //           ),
-      //         ),
-      //       ],
-      //     ),
-      //   ),
-      // ),
-      //Rich Text
-      // body : Column(
-      //   crossAxisAlignment: CrossAxisAlignment.start,
-      //   children: [
-      //     RichText(
-      //       text: TextSpan(
-      //         style: TextStyle(
-      //           fontSize: 20,
-      //           color: Colors.black
-      //         ),
-      //         children: [
-      //           TextSpan(
-      //             text: "Welcome to ",
-      //             style: TextStyle(
-      //               color: Colors.blue,
-      //               fontStyle: FontStyle.italic,
-      //             )
-      //           ),
-      //           TextSpan(
-      //             text: "Flutter",
-      //             style: TextStyle(
-      //               color: Colors.green,
-      //               fontWeight: FontWeight.bold,
-      //             )
-      //           )
-      //         ]
-      //       ),
-      //      ),
-      //      RichText(text: TextSpan(
-      //       style: TextStyle(
-      //         fontSize: 20,
-      //         color: Colors.black
-      //       ),
-      //       children: [
-      //          TextSpan(
-      //             text: "Muhammad",
-      //             style: TextStyle(
-      //               color: Colors.pink,
-      //               fontWeight: FontWeight.bold,
-      //               fontFamily: "myfonts2"
-      //             )
-      //           ),
-      //           TextSpan(
-      //             text: " Iqbal",
-      //             style: TextStyle(
-      //               color: Colors.orange,
-      //               fontWeight: FontWeight.bold,
-      //               fontStyle: FontStyle.italic
-      //             )
-      //           )
-      //       ]
-      //      ))
-      //   ],
-      // )
-      //Font Awesome Icons
-      // body: Row(
-      //   children: [
-      //    FaIcon(FontAwesomeIcons.facebook, size: 50, color: Colors.blue,),
-      //   ],
-      // ),
-      //Positioned Widget
-      // body: Stack(
-      //   children: [
-      //     Container(
-      //       color: Colors.grey[300],
-      //     ),
-      //     Positioned(
-      //       top: 50,
-      //       left: 30,
-      //       child: Container(
-      //         width: 100,
-      //         height: 100,
-      //         color: Colors.blue,
-      //       ),
-      //     ),
-      //     Positioned(
-      //       bottom: 50,
-      //       right: 30,
-      //       child: Container(
-      //         width: 120,
-      //         height: 120,
-      //         color: Colors.red,
-      //       ),
-      //     ),
-      //   ],
-      // ),
-      // body: TabBarView(
-      //   children: [
-      //     Container(color: Colors.blueGrey,),
-      //     Container(color: Colors.amber,),
-      //     Container(color: Colors.orange,),
-      //   ],
-      // ),
-      body: Center(
-  child: ConstrainedBox(
-    constraints: BoxConstraints(
-      minWidth: 300,
-      maxWidth: 350,
-      minHeight: 180,
-    ),
-    child: Container(
-      padding: EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            Colors.deepPurple,
-            Colors.purpleAccent,
-          ],
-        ),
-        borderRadius: BorderRadius.circular(25),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.purple.withOpacity(0.4),
-            blurRadius: 15,
-            offset: Offset(0, 8),
-          ),
-        ],
-      ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CircleAvatar(
-            radius: 30,
-            backgroundColor: Colors.white,
-            child: Icon(
-              Icons.person,
-              size: 35,
-              color: Colors.deepPurple,
-            ),
-          ),
-          SizedBox(height: 20),
-          Text(
-            "Muhammad Iqbal",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          SizedBox(height: 8),
-          Text(
-            "Flutter Developer",
-            style: TextStyle(
-              color: Colors.white70,
-              fontSize: 16,
-            ),
-          ),
-          SizedBox(height: 20),
-          Row(
-            children: [
-              Icon(Icons.email, color: Colors.white),
-              SizedBox(width: 10),
-              Text(
-                "iqbal@gmail.com",
-                style: TextStyle(color: Colors.white),
-              ),
-            ],
-          ),
-        ],
-      ),
-    ),
-  ),
-),
-    );
-    // );
-  }
+//  GridView.count(
+//   crossAxisCount: 3,
+//   mainAxisSpacing: 8,
+//   crossAxisSpacing: 10,
+//   children: [
+//     Container(color: Colors.blue,),
+//     Container(color: Colors.amber,),
+//     Container(color: Colors.orange,),
+//     Container(color: Colors.green,),
+//     Container(color: Colors.black,),
+//     Container(color: Colors.red,),
+//     Container(color: Colors.brown,),
+//     Container(color: Colors.pink,),
+//   ],
+// ),
+// )
+//Stack widget
+// body : Container(
+//   height: 300,
+//   width: 300,
+//   child: Stack (
+//     children: [
+//       Container(
+//         height: 200,
+//         width: 200,
+//         color: Colors.blueGrey,
+//       ),
+//       Positioned(
+//         left: 20,
+//         top: 20,
+//         child: Container(
+//           height: 200,
+//           width: 200,
+//           color: Colors.amber,
+//         ),
+//       ),
+//       Positioned(
+//         top: 40,
+//         left: 40,
+//         child: Container(
+//           height: 200,
+//           width: 200,
+//           color: Colors.orange,
+//         ),
+//       )
+//     ],
+//       ),
+// )
+//Icon widget
+// body: Center(
+//   child:Icon(
+//     Icons.play_circle_fill,
+//     size: 100,
+//     color: Colors.blueGrey,
+// ),
+// )
+//Custom widget
+// body: Center(
+//   child: Column(
+//     mainAxisAlignment: MainAxisAlignment.center,
+//     children: [
+//       Container(
+//         width: 120,
+//         child: RoundedBtn(
+//           btnName: "Login",
+//           bgColor: Colors.orange,
+//           callback: () {
+//             print("Clicked");
+//           },
+//           icon: Icon(Icons.login),
+//         ),
+//       ),
+//       Container(height: 20,),
+//       Container(
+//         width: 120,
+//         child: RoundedBtn(
+//           btnName: "Sign Up",
+//           callback: () {
+//             print("pressed");
+//           },
+//         ),
+//       ),
+//     ],
+//   ),
+// ),
+//Wrap Widget
+// body:Container(
+//   width: double.infinity,
+//   height: double.infinity,
+//   child:Wrap(
+//     direction: Axis.vertical,
+//     spacing: 11,
+//     runSpacing: 11,
+//     alignment: WrapAlignment.spaceBetween,
+//     children: [
+//       Container(
+//         width: 300,
+//         height: 180,
+//         color: Colors.amber,
+//       ),
+//       Container(
+//         width:300,
+//         height: 180,
+//         color: Colors.blue,
+//       ),
+//       Container(
+//         width: 300,
+//         height: 180,
+//         color: Colors.brown,
+//       ),
+//       Container(
+//         width: 300,
+//         height: 180,
+//         color: Colors.green,
+//       )
+//     ],
+//   )
+// )
+//Sized Box
+//     body: Center(
+//   child: Padding(
+//     padding: EdgeInsets.all(20),
+//     child: Column(
+//       mainAxisAlignment: MainAxisAlignment.center,
+//       children: [
+//         SizedBox(
+//           width: 300,
+//           height: 180,
+//           child: Container(
+//             decoration: BoxDecoration(
+//               gradient: LinearGradient(
+//                 colors: [Colors.blue, Colors.purple],
+//                 begin: Alignment.topLeft,
+//                 end: Alignment.bottomRight,
+//               ),
+//               borderRadius: BorderRadius.circular(20),
+//               boxShadow: [
+//                 BoxShadow(
+//                   color: Colors.black26,
+//                   blurRadius: 10,
+//                   offset: Offset(0, 5),
+//                 )
+//               ],
+//             ),
+//             child: Center(
+//               child: Text(
+//                 'Welcome Back',
+//                 style: TextStyle(
+//                   color: Colors.white,
+//                   fontSize: 24,
+//                   fontWeight: FontWeight.bold,
+//                 ),
+//               ),
+//             ),
+//           ),
+//         ),
+//         SizedBox(height: 30),
+//         SizedBox(
+//           width: 300,
+//           height: 55,
+//           child: TextField(
+//             decoration: InputDecoration(
+//               hintText: 'Email',
+//               filled: true,
+//               fillColor: Colors.grey[200],
+//               border: OutlineInputBorder(
+//                 borderRadius: BorderRadius.circular(15),
+//                 borderSide: BorderSide.none,
+//               ),
+//             ),
+//           ),
+//         ),
+//         SizedBox(height: 15),
+//         SizedBox(
+//           width: 300,
+//           height: 55,
+//           child: TextField(
+//             obscureText: true,
+//             decoration: InputDecoration(
+//               hintText: 'Password',
+//               filled: true,
+//               fillColor: Colors.grey[200],
+//               border: OutlineInputBorder(
+//                 borderRadius: BorderRadius.circular(15),
+//                 borderSide: BorderSide.none,
+//               ),
+//             ),
+//           ),
+//         ),
+//         SizedBox(height: 25),
+//         SizedBox(
+//           width: 300,
+//           height: 55,
+//           child: ElevatedButton(
+//             style: ElevatedButton.styleFrom(
+//               shape: RoundedRectangleBorder(
+//                 borderRadius: BorderRadius.circular(15),
+//               ),
+//               backgroundColor: Colors.purple,
+//             ),
+//             onPressed: () {},
+//             child: Text(
+//               'Login',
+//               style: TextStyle(fontSize: 18),
+//             ),
+//           ),
+//         ),
+//       ],
+//     ),
+//   ),
+// ),
+//Rich Text
+// body : Column(
+//   crossAxisAlignment: CrossAxisAlignment.start,
+//   children: [
+//     RichText(
+//       text: TextSpan(
+//         style: TextStyle(
+//           fontSize: 20,
+//           color: Colors.black
+//         ),
+//         children: [
+//           TextSpan(
+//             text: "Welcome to ",
+//             style: TextStyle(
+//               color: Colors.blue,
+//               fontStyle: FontStyle.italic,
+//             )
+//           ),
+//           TextSpan(
+//             text: "Flutter",
+//             style: TextStyle(
+//               color: Colors.green,
+//               fontWeight: FontWeight.bold,
+//             )
+//           )
+//         ]
+//       ),
+//      ),
+//      RichText(text: TextSpan(
+//       style: TextStyle(
+//         fontSize: 20,
+//         color: Colors.black
+//       ),
+//       children: [
+//          TextSpan(
+//             text: "Muhammad",
+//             style: TextStyle(
+//               color: Colors.pink,
+//               fontWeight: FontWeight.bold,
+//               fontFamily: "myfonts2"
+//             )
+//           ),
+//           TextSpan(
+//             text: " Iqbal",
+//             style: TextStyle(
+//               color: Colors.orange,
+//               fontWeight: FontWeight.bold,
+//               fontStyle: FontStyle.italic
+//             )
+//           )
+//       ]
+//      ))
+//   ],
+// )
+//Font Awesome Icons
+// body: Row(
+//   children: [
+//    FaIcon(FontAwesomeIcons.facebook, size: 50, color: Colors.blue,),
+//   ],
+// ),
+//Positioned Widget
+// body: Stack(
+//   children: [
+//     Container(
+//       color: Colors.grey[300],
+//     ),
+//     Positioned(
+//       top: 50,
+//       left: 30,
+//       child: Container(
+//         width: 100,
+//         height: 100,
+//         color: Colors.blue,
+//       ),
+//     ),
+//     Positioned(
+//       bottom: 50,
+//       right: 30,
+//       child: Container(
+//         width: 120,
+//         height: 120,
+//         color: Colors.red,
+//       ),
+//     ),
+//   ],
+// ),
+// body: TabBarView(
+//   children: [
+//     Container(color: Colors.blueGrey,),
+//     Container(color: Colors.amber,),
+//     Container(color: Colors.orange,),
+//   ],
+// ),
+//Constrainsted Box
+//       body: Center(
+//   child: ConstrainedBox(
+//     constraints: BoxConstraints(
+//       minWidth: 300,
+//       maxWidth: 350,
+//       minHeight: 180,
+//     ),
+//     child: Container(
+//       padding: EdgeInsets.all(20),
+//       decoration: BoxDecoration(
+//         gradient: LinearGradient(
+//           colors: [
+//             Colors.deepPurple,
+//             Colors.purpleAccent,
+//           ],
+//         ),
+//         borderRadius: BorderRadius.circular(25),
+//         boxShadow: [
+//           BoxShadow(
+//             color: Colors.purple.withOpacity(0.4),
+//             blurRadius: 15,
+//             offset: Offset(0, 8),
+//           ),
+//         ],
+//       ),
+//       child: Column(
+//         mainAxisSize: MainAxisSize.min,
+//         crossAxisAlignment: CrossAxisAlignment.start,
+//         children: [
+//           CircleAvatar(
+//             radius: 30,
+//             backgroundColor: Colors.white,
+//             child: Icon(
+//               Icons.person,
+//               size: 35,
+//               color: Colors.deepPurple,
+//             ),
+//           ),
+//           SizedBox(height: 20),
+//           Text(
+//             "Muhammad Iqbal",
+//             style: TextStyle(
+//               color: Colors.white,
+//               fontSize: 24,
+//               fontWeight: FontWeight.bold,
+//             ),
+//           ),
+//           SizedBox(height: 8),
+//           Text(
+//             "Flutter Developer",
+//             style: TextStyle(
+//               color: Colors.white70,
+//               fontSize: 16,
+//             ),
+//           ),
+//           SizedBox(height: 20),
+//           Row(
+//             children: [
+//               Icon(Icons.email, color: Colors.white),
+//               SizedBox(width: 10),
+//               Text(
+//                 "iqbal@gmail.com",
+//                 style: TextStyle(color: Colors.white),
+//               ),
+//             ],
+//           ),
+//         ],
+//       ),
+//     ),
+//   ),
+// ),
+// );
+// );
+// }
 
-  //   void _showSimOptions(BuildContext context) {
-  //   showModalBottomSheet(
-  //     context: context,
-  //     builder: (context) {
-  //       return Container(
-  //         padding: EdgeInsets.all(16),
-  //         child: Column(
-  //           mainAxisSize: MainAxisSize.min,
-  //           children: [
-  //             Text(
-  //               "Choose SIM",
-  //               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-  //             ),
-  //             SizedBox(height: 10),
+//   void _showSimOptions(BuildContext context) {
+//   showModalBottomSheet(
+//     context: context,
+//     builder: (context) {
+//       return Container(
+//         padding: EdgeInsets.all(16),
+//         child: Column(
+//           mainAxisSize: MainAxisSize.min,
+//           children: [
+//             Text(
+//               "Choose SIM",
+//               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+//             ),
+//             SizedBox(height: 10),
 
-  //             ListTile(
-  //               leading: Icon(Icons.sim_card),
-  //               title: Text("SIM 1"),
-  //               onTap: () {
-  //                 Navigator.pop(context);
-  //                 print("SIM 1 selected");
-  //               },
-  //             ),
+//             ListTile(
+//               leading: Icon(Icons.sim_card),
+//               title: Text("SIM 1"),
+//               onTap: () {
+//                 Navigator.pop(context);
+//                 print("SIM 1 selected");
+//               },
+//             ),
 
-  //             ListTile(
-  //               leading: Icon(Icons.sim_card),
-  //               title: Text("SIM 2"),
-  //               onTap: () {
-  //                 Navigator.pop(context);
-  //                 print("SIM 2 selected");
-  //               },
-  //             ),
-  //           ],
-  //         ),
-  //       );
-  //     },
-  //   );
-  // }
-}
+//             ListTile(
+//               leading: Icon(Icons.sim_card),
+//               title: Text("SIM 2"),
+//               onTap: () {
+//                 Navigator.pop(context);
+//                 print("SIM 2 selected");
+//               },
+//             ),
+//           ],
+//         ),
+//       );
+//     },
+//   );
+// }
+// }
 
 // class GridContainer extends StatelessWidget {
 //   @override
@@ -1147,3 +1148,28 @@ class _MyHomePageState extends State<MyHomePage> {
 //     );
 //   }
 // }
+
+//Use of Stateful widget
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(home: MyHomePage());
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  @override
+  State<MyHomePage> createState() {
+    return _MyHomeState();
+  }
+}
+
+class _MyHomeState extends State<MyHomePage> {
+  Widget build(BuildContext context) {
+    return Scaffold();
+  }
+}
