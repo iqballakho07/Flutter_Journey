@@ -1202,10 +1202,41 @@ class MyHomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text("Welcome to Flutter"),
+            SizedBox(height: 11),
             ElevatedButton(
               onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MyHomePage2())
+                );
               },
               child: Text("Next page"),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class MyHomePage2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Welcome to the second page"),
+            SizedBox(height: 11),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MyHomePage()),
+                );
+              },
+              child: Text("previous page"),
             ),
           ],
         ),
