@@ -8,7 +8,7 @@ class RoundedBtn extends StatelessWidget {
 
   RoundedBtn({
     required this.btnName,
-    this.bgColor = Colors.blue,
+    this.bgColor = Colors.blueGrey,
     this.icon,
     this.callback,
   });
@@ -20,15 +20,15 @@ class RoundedBtn extends StatelessWidget {
       child: icon != null
           ? Row(children: [icon!, Text(btnName)])
           : Text(btnName),
-          style: ElevatedButton.styleFrom(
-            backgroundColor: bgColor,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.only(
-                topRight: Radius.circular(21),
-                bottomLeft: Radius.circular(21)
-              )
-            )
+      style: ElevatedButton.styleFrom(
+        backgroundColor: bgColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topRight: Radius.circular(21),
+            bottomLeft: Radius.circular(21),
           ),
+        ),
+      ),
     );
   }
 }

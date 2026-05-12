@@ -1157,37 +1157,55 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: MyHomePage(),
-      debugShowCheckedModeBanner: false,
-    );
+    return MaterialApp(home: MyHomePage(), debugShowCheckedModeBanner: false);
   }
 }
 
-class MyHomePage extends StatefulWidget {
+// class MyHomePage extends StatefulWidget {
+//   @override
+//   State<MyHomePage> createState() {
+//     return _MyHomeState();
+//   }
+// }
+
+// class _MyHomeState extends State<MyHomePage> {
+//   int counter = 0;
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: Text("Counter Application"),),
+//       body: Center(
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             Text("Count : $counter", style: TextStyle(fontSize: 20)),
+//             ElevatedButton(
+//               onPressed: () {
+//                 setState(() {
+//                   counter++;
+//                 });
+//               },
+//               child: Text("Increment"),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+class MyHomePage extends StatelessWidget {
   @override
-  State<MyHomePage> createState() {
-    return _MyHomeState();
-  }
-}
-
-class _MyHomeState extends State<MyHomePage> {
-  int counter = 0;
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Counter Application"),),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Count : $counter", style: TextStyle(fontSize: 20)),
+            Text("Welcome to Flutter"),
             ElevatedButton(
               onPressed: () {
-                setState(() {
-                  counter++;
-                });
               },
-              child: Text("Increment"),
+              child: Text("Next page"),
             ),
           ],
         ),
