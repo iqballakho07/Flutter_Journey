@@ -1195,6 +1195,8 @@ class MyApp extends StatelessWidget {
 // }
 
 class MyHomePage extends StatelessWidget {
+  var controller1 = TextEditingController();
+  var controller2 = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -1202,16 +1204,30 @@ class MyHomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Welcome to Flutter"),
+            TextField(
+              controller: controller1,
+              decoration: InputDecoration(
+                hintText: "Enter your name",
+                border: OutlineInputBorder(),
+              ),
+            ), 
             SizedBox(height: 11),
+            TextField(
+              controller: controller2,
+              decoration: InputDecoration(
+                hintText: "Enter your Skills",
+                border: OutlineInputBorder(),
+              ),
+            ),
+            SizedBox(height: 11), 
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => MyHomePage2())
+                  MaterialPageRoute(builder: (context) => MyHomePage2(controller1.text, controller2.text)),
                 );
               },
-              child: Text("Next page"),
+              child: Text("Login"),
             ),
           ],
         ),
@@ -1221,6 +1237,11 @@ class MyHomePage extends StatelessWidget {
 }
 
 class MyHomePage2 extends StatelessWidget {
+  final String name;
+  final String skills;
+
+  MyHomePage2(this.name, this.skills);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -1228,7 +1249,8 @@ class MyHomePage2 extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Welcome to the second page"),
+            Text("Welcome, $name!"),
+            Text("Skills: $skills"),
             SizedBox(height: 11),
             ElevatedButton(
               onPressed: () {
