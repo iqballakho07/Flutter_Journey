@@ -1158,7 +1158,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: SplashScreen(), debugShowCheckedModeBanner: false);
+    return MaterialApp(home: MyHomePage(), debugShowCheckedModeBanner: false);
   }
 }
 
@@ -1194,105 +1194,139 @@ class MyApp extends StatelessWidget {
 //   }
 // }
 
-class MyHomePage extends StatelessWidget {
-  var controller1 = TextEditingController();
-  var controller2 = TextEditingController();
+// class MyHomePage extends StatelessWidget {
+//   var controller1 = TextEditingController();
+//   var controller2 = TextEditingController();
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Center(
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             TextField(
+//               controller: controller1,
+//               decoration: InputDecoration(
+//                 hintText: "Enter your name",
+//                 border: OutlineInputBorder(),
+//               ),
+//             ), 
+//             SizedBox(height: 11),
+//             TextField(
+//               controller: controller2,
+//               decoration: InputDecoration(
+//                 hintText: "Enter your Skills",
+//                 border: OutlineInputBorder(),
+//               ),
+//             ),
+//             SizedBox(height: 11), 
+//             ElevatedButton(
+//               onPressed: () {
+//                 Navigator.push(
+//                   context,
+//                   MaterialPageRoute(builder: (context) => MyHomePage2(controller1.text, controller2.text)),
+//                 );
+//               },
+//               child: Text("Login"),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// class MyHomePage2 extends StatelessWidget {
+//   final String name;
+//   final String skills;
+
+//   MyHomePage2(this.name, this.skills);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Center(
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             Text("Welcome, $name!"),
+//             Text("Skills: $skills"),
+//             SizedBox(height: 11),
+//             ElevatedButton(
+//               onPressed: () {
+//                 Navigator.push(
+//                   context,
+//                   MaterialPageRoute(builder: (context) => MyHomePage()),
+//                 );
+//               },
+//               child: Text("previous page"),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// //Splash Screen
+// class SplashScreen extends StatefulWidget {
+//   @override
+//   _SplashScreenState createState() => _SplashScreenState();
+// }
+
+// class _SplashScreenState extends State<SplashScreen> {
+//   @override
+//   void initState() {
+//     super.initState();
+//     Timer(Duration(seconds: 3), () {
+//       Navigator.pushReplacement(
+//         context,
+//         MaterialPageRoute(builder: (context) => MyHomePage()),
+//       );
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Container(
+//         color: Colors.blueGrey,
+//         child: Center(
+//           child: Text("Splash Screen",style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+//Range Slider
+class MyHomePage extends StatefulWidget {
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+ 
+}
+class _MyHomePageState extends State<MyHomePage> {
+  RangeValues _currentRangeValues = const RangeValues(0, 100);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextField(
-              controller: controller1,
-              decoration: InputDecoration(
-                hintText: "Enter your name",
-                border: OutlineInputBorder(),
-              ),
-            ), 
-            SizedBox(height: 11),
-            TextField(
-              controller: controller2,
-              decoration: InputDecoration(
-                hintText: "Enter your Skills",
-                border: OutlineInputBorder(),
-              ),
-            ),
-            SizedBox(height: 11), 
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => MyHomePage2(controller1.text, controller2.text)),
-                );
-              },
-              child: Text("Login"),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class MyHomePage2 extends StatelessWidget {
-  final String name;
-  final String skills;
-
-  MyHomePage2(this.name, this.skills);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text("Welcome, $name!"),
-            Text("Skills: $skills"),
-            SizedBox(height: 11),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => MyHomePage()),
-                );
-              },
-              child: Text("previous page"),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-//Splash Screen
-class SplashScreen extends StatefulWidget {
-  @override
-  _SplashScreenState createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  @override
-  void initState() {
-    super.initState();
-    Timer(Duration(seconds: 3), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => MyHomePage()),
-      );
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: Colors.blueGrey,
-        child: Center(
-          child: Text("Splash Screen",style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),),
+        child: RangeSlider(
+          values: _currentRangeValues,
+          min: 0,
+          max: 100,
+          divisions: 10,
+          activeColor: Colors.lightBlue,
+          inactiveColor: Colors.lightBlueAccent,
+          labels: RangeLabels(
+            _currentRangeValues.start.toString(),
+            _currentRangeValues.end.toString(),
+          ),
+          onChanged: (RangeValues values) {
+            setState(() {
+              _currentRangeValues = values;
+            });
+          },
         ),
       ),
     );
