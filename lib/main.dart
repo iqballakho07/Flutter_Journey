@@ -1350,6 +1350,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text("Animation"),),
       body: Center(
         // child: Column(
         //   mainAxisAlignment: MainAxisAlignment.center,
@@ -1421,45 +1422,81 @@ class _MyHomePageState extends State<MyHomePage> {
         // ),
 
         //Cross Fade Animation
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            AnimatedCrossFade(
-              firstChild: Container(width: 200, height: 200, color: Colors.amber),
-              secondChild: RichText(text: TextSpan(
-                style: TextStyle(fontSize: 20, color: Colors.black),
-                children: [
-                  TextSpan(
-                    text: "Welcome to ",
-                    style: TextStyle(
-                      color: Colors.blue,
-                      fontStyle: FontStyle.italic,
-                    )
-                  ),
-                  TextSpan(
-                    text: "Flutter",
-                    style: TextStyle(
-                      color: Colors.green,
-                      fontWeight: FontWeight.bold,
-                    )
-                  )
-                ]
-              )),
-              crossFadeState: flag ? CrossFadeState.showFirst : CrossFadeState.showSecond,
-              duration: Duration(seconds: 2),
-              sizeCurve:Curves.bounceIn ,
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       AnimatedCrossFade(
+      //         firstChild: Container(width: 200, height: 200, color: Colors.amber),
+      //         secondChild: RichText(text: TextSpan(
+      //           style: TextStyle(fontSize: 20, color: Colors.black),
+      //           children: [
+      //             TextSpan(
+      //               text: "Welcome to ",
+      //               style: TextStyle(
+      //                 color: Colors.blue,
+      //                 fontStyle: FontStyle.italic,
+      //               )
+      //             ),
+      //             TextSpan(
+      //               text: "Flutter",
+      //               style: TextStyle(
+      //                 color: Colors.green,
+      //                 fontWeight: FontWeight.bold,
+      //               )
+      //             )
+      //           ]
+      //         )),
+      //         crossFadeState: flag ? CrossFadeState.showFirst : CrossFadeState.showSecond,
+      //         duration: Duration(seconds: 2),
+      //         sizeCurve:Curves.bounceIn ,
+      //       ),
+      //       SizedBox(height: 20,),
+      //       ElevatedButton(
+      //         onPressed: () {
+      //           setState(() {
+      //             flag = !flag;
+      //           });
+      //         },
+      //         child: Text("AnimateCrossFade"),
+      //       ),
+      //     ],
+      // ),
+      
+      //Hero Animation
+      child: Center(
+        child: Container(
+         width: 200,
+          height: 200,
+          child: InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MyHomePage2()),
+              );
+            },
+            child: Hero(
+              child: Image.asset("assets/images/flutter.jpeg",),
+              tag: "myimage",
             ),
-            SizedBox(height: 20,),
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  flag = !flag;
-                });
-              },
-              child: Text("AnimateCrossFade"),
-            ),
-          ],
+          ),
+        ),
       ),
+      ),
+    );
+  }
+}
+
+
+class MyHomePage2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Detailed Page"),),
+      body: Container(
+        child: Hero(
+          tag: "myimage",
+          child: Image.asset("assets/images/flutter.jpeg",fit: BoxFit.cover,width: double.infinity,),
+        ),
       ),
     );
   }
