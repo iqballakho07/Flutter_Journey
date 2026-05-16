@@ -1210,7 +1210,7 @@ class MyApp extends StatelessWidget {
 //                 hintText: "Enter your name",
 //                 border: OutlineInputBorder(),
 //               ),
-//             ), 
+//             ),
 //             SizedBox(height: 11),
 //             TextField(
 //               controller: controller2,
@@ -1219,7 +1219,7 @@ class MyApp extends StatelessWidget {
 //                 border: OutlineInputBorder(),
 //               ),
 //             ),
-//             SizedBox(height: 11), 
+//             SizedBox(height: 11),
 //             ElevatedButton(
 //               onPressed: () {
 //                 Navigator.push(
@@ -1300,33 +1300,95 @@ class MyApp extends StatelessWidget {
 // }
 
 //Range Slider
+// class MyHomePage extends StatefulWidget {
+//   @override
+//   State<MyHomePage> createState() => _MyHomePageState();
+
+// }
+// class _MyHomePageState extends State<MyHomePage> {
+//   RangeValues _currentRangeValues = const RangeValues(0, 100);
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Center(
+//         child: RangeSlider(
+//           values: _currentRangeValues,
+//           min: 0,
+//           max: 100,
+//           divisions: 10,
+//           activeColor: Colors.lightBlue,
+//           inactiveColor: Colors.lightBlueAccent,
+//           labels: RangeLabels(
+//             _currentRangeValues.start.toString(),
+//             _currentRangeValues.end.toString(),
+//           ),
+//           onChanged: (RangeValues values) {
+//             setState(() {
+//               _currentRangeValues = values;
+//             });
+//           },
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+//Animated Container
 class MyHomePage extends StatefulWidget {
   @override
   State<MyHomePage> createState() => _MyHomePageState();
- 
 }
+
 class _MyHomePageState extends State<MyHomePage> {
-  RangeValues _currentRangeValues = const RangeValues(0, 100);
+  var decoration = BoxDecoration(
+    color: Colors.blueGrey,
+    shape: BoxShape.circle,
+  );
+  var btnText = "Rectangle";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: RangeSlider(
-          values: _currentRangeValues,
-          min: 0,
-          max: 100,
-          divisions: 10,
-          activeColor: Colors.lightBlue,
-          inactiveColor: Colors.lightBlueAccent,
-          labels: RangeLabels(
-            _currentRangeValues.start.toString(),
-            _currentRangeValues.end.toString(),
-          ),
-          onChanged: (RangeValues values) {
-            setState(() {
-              _currentRangeValues = values;
-            });
-          },
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            AnimatedContainer(
+              duration: Duration(seconds: 1),
+              width: 200,
+              height: 200,
+              decoration: decoration,
+              curve: Curves.slowMiddle,
+              child: Center(
+                child: Text(
+                  "Animated Container",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  if (btnText == "Rectangle") {
+                    decoration = BoxDecoration(
+                      color: Colors.purple,
+                      shape: BoxShape.rectangle,
+                    );
+
+                    btnText = "Circle";
+                  }else{
+                     decoration = BoxDecoration(
+                      color: Colors.blueGrey,
+                      shape: BoxShape.circle,
+                    );
+
+                    btnText = "Rectangle";
+                  }
+                });
+              },
+              child: Text(btnText),
+            ),
+          ],
         ),
       ),
     );
