@@ -1340,56 +1340,87 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var decoration = BoxDecoration(
-    color: Colors.blueGrey,
-    shape: BoxShape.circle,
-  );
-  var btnText = "Rectangle";
+  // var decoration = BoxDecoration(
+  //   color: Colors.blueGrey,
+  //   shape: BoxShape.circle,
+  // );
+  // var btnText = "Rectangle";
+  var opacity = 1.0;
+  var flag = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            AnimatedContainer(
-              duration: Duration(seconds: 1),
-              width: 200,
-              height: 200,
-              decoration: decoration,
-              curve: Curves.slowMiddle,
-              child: Center(
-                child: Text(
-                  "Animated Container",
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  if (btnText == "Rectangle") {
-                    decoration = BoxDecoration(
-                      color: Colors.purple,
-                      shape: BoxShape.rectangle,
-                    );
+        // child: Column(
+        //   mainAxisAlignment: MainAxisAlignment.center,
+        //   children: [
+        //     AnimatedContainer(
+        //       duration: Duration(seconds: 3),
+        //       width: 200,
+        //       height: 200,
+        //       decoration: decoration,
+        //       curve: Curves.slowMiddle,
+        //       child: Center(
+        //         child: Text(
+        //           "Animated Container",
+        //           style: TextStyle(color: Colors.white),
+        //         ),
+        //       ),
+        //     ),
+        //     SizedBox(height: 20),
+        //     ElevatedButton(
+        //       onPressed: () {
+        //         setState(() {
+        //           if (btnText == "Rectangle") {
+        //             decoration = BoxDecoration(
+        //               color: Colors.purple,
+        //               shape: BoxShape.rectangle,
+        //             );
 
-                    btnText = "Circle";
-                  }else{
-                     decoration = BoxDecoration(
-                      color: Colors.blueGrey,
-                      shape: BoxShape.circle,
-                    );
+        //             btnText = "Circle";
+        //           }else{
+        //              decoration = BoxDecoration(
+        //               color: Colors.blueGrey,
+        //               shape: BoxShape.circle,
+        //             );
 
-                    btnText = "Rectangle";
-                  }
-                });
-              },
-              child: Text(btnText),
-            ),
-          ],
-        ),
+        //             btnText = "Rectangle";
+        //           }
+        //         });
+        //       },
+        //       child: Text(btnText),
+        //     ),
+        //   ],
+        // ),
+
+        //Animated Opacity
+        // child: Column(
+        //   mainAxisAlignment: MainAxisAlignment.center,
+        //   children: [
+        //     AnimatedOpacity(
+        //       opacity: opacity,
+        //       duration: Duration(seconds: 2),
+        //       child: Container(width: 200, height: 200, color: Colors.amber),
+        //     ),
+        //     SizedBox(height: 20,),
+        //     ElevatedButton(
+        //       onPressed: () {
+        //         setState(() {
+        //           if (flag) {
+        //             opacity = 0.0;
+        //             flag = false;
+        //           } else {
+        //             opacity = 1.0;
+        //             flag = true;
+        //           }
+        //         });
+        //       },
+        //       child: Text("AnimateOpacity"),
+        //     ),
+        //   ],
+        // ),
+
+        //
       ),
     );
   }
