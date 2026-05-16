@@ -1345,7 +1345,7 @@ class _MyHomePageState extends State<MyHomePage> {
   //   shape: BoxShape.circle,
   // );
   // var btnText = "Rectangle";
-  var opacity = 1.0;
+  // var opacity = 1.0;
   var flag = true;
   @override
   Widget build(BuildContext context) {
@@ -1420,7 +1420,46 @@ class _MyHomePageState extends State<MyHomePage> {
         //   ],
         // ),
 
-        //
+        //Cross Fade Animation
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            AnimatedCrossFade(
+              firstChild: Container(width: 200, height: 200, color: Colors.amber),
+              secondChild: RichText(text: TextSpan(
+                style: TextStyle(fontSize: 20, color: Colors.black),
+                children: [
+                  TextSpan(
+                    text: "Welcome to ",
+                    style: TextStyle(
+                      color: Colors.blue,
+                      fontStyle: FontStyle.italic,
+                    )
+                  ),
+                  TextSpan(
+                    text: "Flutter",
+                    style: TextStyle(
+                      color: Colors.green,
+                      fontWeight: FontWeight.bold,
+                    )
+                  )
+                ]
+              )),
+              crossFadeState: flag ? CrossFadeState.showFirst : CrossFadeState.showSecond,
+              duration: Duration(seconds: 2),
+              sizeCurve:Curves.bounceIn ,
+            ),
+            SizedBox(height: 20,),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  flag = !flag;
+                });
+              },
+              child: Text("AnimateCrossFade"),
+            ),
+          ],
+      ),
       ),
     );
   }
