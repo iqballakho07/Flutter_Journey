@@ -1502,27 +1502,41 @@ class MyApp extends StatelessWidget {
 // }
 
 //Listwheel ScrollView
+// class MyHomePage extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: ListWheelScrollView(
+//         itemExtent: 100,
+//         children: List.generate(
+//           20,
+//           (index) => Container(
+//             alignment: Alignment.center,
+//             decoration: BoxDecoration(
+//               color: Colors.blueGrey,
+//               borderRadius: BorderRadius.circular(15),
+//             ),
+//             child: Text(
+//               "Item ${index + 1}",
+//               style: TextStyle(fontSize: 20, color: Colors.white),
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+//Clip RRect
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListWheelScrollView(
-        itemExtent: 100,
-        children: List.generate(
-          20,
-          (index) => Container(
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: Colors.blueGrey,
-              borderRadius: BorderRadius.circular(15),
-            ),
-            child: Text(
-              "Item ${index + 1}",
-              style: TextStyle(fontSize: 20, color: Colors.white),
-            ),
-          ),
+      body: Center(
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(40),
+          child: Image.asset("assets/images/flutter.jpeg",fit: BoxFit.fill,width: 400,height: 200,),
         ),
-      ),
+      )
     );
   }
 }
