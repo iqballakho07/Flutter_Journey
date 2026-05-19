@@ -1158,7 +1158,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: MyHomePage(), debugShowCheckedModeBanner: false);
+    return MaterialApp(home: MyAnimation(), debugShowCheckedModeBanner: false);
   }
 }
 
@@ -1568,20 +1568,64 @@ class MyApp extends StatelessWidget {
 //   }
 // }
 //Mapping list to widget
-class MyHomePage extends StatelessWidget {
+// class MyHomePage extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     var data = [
+//       {"name": "Muhammad Iqbal", "skills": "Flutter Developer"},
+//       {"name": "Ali Raza", "skills": "React Developer"},
+//     ];
+//     return Scaffold(
+//       body: ListView(
+//         children: data.map((value)=>ListTile(
+//           leading: Icon(Icons.person),
+//           title: Text(value['name'].toString()),
+//           subtitle: Text(value['skills'].toString()),
+//         )).toList()
+//       ),
+//     );
+//   }
+// }
+class MyAnimation extends StatefulWidget {
+  const MyAnimation({super.key});
+
+  @override
+  State<MyAnimation> createState() => _MyAnimationState();
+}
+
+class _MyAnimationState extends State<MyAnimation>
+    with SingleTickerProviderStateMixin {
+  late AnimationController controller;
+  late Animation animation;
+  late Animation colorAnimation;
+
+  void initState() {
+    controller = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 4),
+    );
+    animation = Tween(begin: 200.0, end: 100.0).animate(controller);
+    colorAnimation = ColorTween(
+      begin: Colors.red,
+      end: Colors.green,
+    ).animate(controller);
+    controller.addListener(() {
+      // print(animation.value);
+      setState(() {});
+    });
+
+    controller.forward();
+  }
+
   @override
   Widget build(BuildContext context) {
-    var data = [
-      {"name": "Muhammad Iqbal", "skills": "Flutter Developer"},
-      {"name": "Ali Raza", "skills": "React Developer"},
-    ];
     return Scaffold(
-      body: ListView(
-        children: data.map((value)=>ListTile(
-          leading: Icon(Icons.person),
-          title: Text(value['name'].toString()),
-          subtitle: Text(value['skills'].toString()),
-        )).toList()
+      body: Center(
+        child: Container(
+          width: animation.value,
+          height: animation.value,
+          color: colorAnimation.value
+        ),
       ),
     );
   }
