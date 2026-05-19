@@ -1541,29 +1541,48 @@ class MyApp extends StatelessWidget {
 //   }
 // }
 //Gradient
+// class MyHomePage extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Container(
+//         decoration: BoxDecoration(
+// gradient: LinearGradient(
+//   colors: [
+//     Color(0Xffd4fc79),
+//     Color(0Xff96e6a1)
+//   ],
+//   begin: FractionalOffset(0.0, 0.0),
+//   end: FractionalOffset(1.0, 1.0),
+// )
+//           gradient: RadialGradient(
+//             center: Alignment.bottomLeft,
+//             colors: [
+//               Color(0Xffd4fc79),
+//               Color(0Xff96e6a1)
+//           ],
+//           )
+//         )
+//       )
+//     );
+//   }
+// }
+//Mapping list to widget
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var data = [
+      {"name": "Muhammad Iqbal", "skills": "Flutter Developer"},
+      {"name": "Ali Raza", "skills": "React Developer"},
+    ];
     return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          // gradient: LinearGradient(
-          //   colors: [
-          //     Color(0Xffd4fc79),
-          //     Color(0Xff96e6a1)
-          //   ],
-          //   begin: FractionalOffset(0.0, 0.0),
-          //   end: FractionalOffset(1.0, 1.0),
-          // )
-          gradient: RadialGradient(
-            center: Alignment.bottomLeft,
-            colors: [
-              Color(0Xffd4fc79),
-              Color(0Xff96e6a1)
-          ],
-          )
-        )
-      )
+      body: ListView(
+        children: data.map((value)=>ListTile(
+          leading: Icon(Icons.person),
+          title: Text(value['name'].toString()),
+          subtitle: Text(value['skills'].toString()),
+        )).toList()
+      ),
     );
   }
 }
