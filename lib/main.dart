@@ -1527,15 +1527,36 @@ class MyApp extends StatelessWidget {
 //   }
 // }
 //Clip RRect
+// class MyHomePage extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Center(
+//         child: ClipRRect(
+//               borderRadius: BorderRadius.circular(40),
+//               child: Image.asset("assets/images/flutter.jpeg",fit: BoxFit.fill,width: 400,height: 200,),
+//             ),
+//       )
+//     );
+//   }
+// }
+//Gradient
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(40),
-          child: Image.asset("assets/images/flutter.jpeg",fit: BoxFit.fill,width: 400,height: 200,),
-        ),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color(0Xffd4fc79),
+              Color(0Xff96e6a1)
+            ],
+            begin: FractionalOffset(0.0, 0.0),
+            end: FractionalOffset(1.0, 1.0),
+          )
+          
+        )
       )
     );
   }
