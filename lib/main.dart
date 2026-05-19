@@ -1547,15 +1547,21 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
+          // gradient: LinearGradient(
+          //   colors: [
+          //     Color(0Xffd4fc79),
+          //     Color(0Xff96e6a1)
+          //   ],
+          //   begin: FractionalOffset(0.0, 0.0),
+          //   end: FractionalOffset(1.0, 1.0),
+          // )
+          gradient: RadialGradient(
+            center: Alignment.bottomLeft,
             colors: [
               Color(0Xffd4fc79),
               Color(0Xff96e6a1)
-            ],
-            begin: FractionalOffset(0.0, 0.0),
-            end: FractionalOffset(1.0, 1.0),
+          ],
           )
-          
         )
       )
     );
