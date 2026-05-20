@@ -1599,7 +1599,7 @@ class _MyAnimationState extends State<MyAnimation>
   late Animation animation;
   late Animation colorAnimation;
 
-  var RadiusList = [150.0,200.0,250.0,300.0,350.0];
+  var RadiusList = [150.0, 200.0, 250.0, 300.0, 350.0];
 
   void initState() {
     super.initState();
@@ -1614,7 +1614,6 @@ class _MyAnimationState extends State<MyAnimation>
     // ).animate(controller);
     controller.addListener(() {
       setState(() {});
-      
     });
 
     controller.forward();
@@ -1635,17 +1634,16 @@ class _MyAnimationState extends State<MyAnimation>
       body: Center(
         child: Stack(
           alignment: Alignment.center,
-          children: RadiusList.map((radius)=>
-          Container(
-            width: radius*animation.value,
-            height: radius*animation.value,
-            decoration: BoxDecoration(
-              color: Colors.blue.withOpacity(1.0-animation.value),
-              shape: BoxShape.circle
+          children: RadiusList.map(
+            (radius) => Container(
+              width: radius * animation.value,
+              height: radius * animation.value,
+              decoration: BoxDecoration(
+                color: Colors.blue.withOpacity(1.0 - animation.value),
+                shape: BoxShape.circle,
+              ),
             ),
-            
-          )
-          ).toList()
+          ).toList(),
         ),
       ),
     );
