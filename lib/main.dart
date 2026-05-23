@@ -1151,16 +1151,16 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 // }
 
 //Use of Stateful widget
-void main() {
-  runApp(MyApp());
-}
+// void main() {
+//   runApp(MyApp());
+// }
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(home: MyAnimation(), debugShowCheckedModeBanner: false);
-  }
-}
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(home: MyAnimation(), debugShowCheckedModeBanner: false);
+//   }
+// }
 
 // class MyHomePage extends StatefulWidget {
 //   @override
@@ -1586,66 +1586,113 @@ class MyApp extends StatelessWidget {
 //     );
 //   }
 // }
-class MyAnimation extends StatefulWidget {
-  const MyAnimation({super.key});
+// class MyAnimation extends StatefulWidget {
+//   const MyAnimation({super.key});
 
-  @override
-  State<MyAnimation> createState() => _MyAnimationState();
+//   @override
+//   State<MyAnimation> createState() => _MyAnimationState();
+// }
+
+// class _MyAnimationState extends State<MyAnimation>
+//     with SingleTickerProviderStateMixin {
+//   late AnimationController controller;
+//   late Animation animation;
+//   late Animation colorAnimation;
+
+//   var RadiusList = [150.0, 200.0, 250.0, 300.0, 350.0];
+
+//   void initState() {
+//     super.initState();
+//     controller = AnimationController(
+//       vsync: this,
+//       duration: Duration(seconds: 4),
+//     );
+//     animation = Tween(begin: 0.0, end: 1.0).animate(controller);
+//     // colorAnimation = ColorTween(
+//     //   begin: Colors.red,
+//     //   end: Colors.green,
+//     // ).animate(controller);
+//     controller.addListener(() {
+//       setState(() {});
+//     });
+
+//     controller.forward();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       // body: Center(
+//       //   child: Container(
+//       //     width: animation.value,
+//       //     height: animation.value,
+//       //     color: colorAnimation.value
+//       //   ),
+//       // ),
+
+//       //ripple animation
+//       body: Center(
+//         child: Stack(
+//           alignment: Alignment.center,
+//           children: RadiusList.map(
+//             (radius) => Container(
+//               width: radius * animation.value,
+//               height: radius * animation.value,
+//               decoration: BoxDecoration(
+//                 color: Colors.blue.withOpacity(1.0 - animation.value),
+//                 shape: BoxShape.circle,
+//               ),
+//             ),
+//           ).toList(),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+void main() {
+  runApp(MyApp());
 }
 
-class _MyAnimationState extends State<MyAnimation>
-    with SingleTickerProviderStateMixin {
-  late AnimationController controller;
-  late Animation animation;
-  late Animation colorAnimation;
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-  var RadiusList = [150.0, 200.0, 250.0, 300.0, 350.0];
-
-  void initState() {
-    super.initState();
-    controller = AnimationController(
-      vsync: this,
-      duration: Duration(seconds: 4),
-    );
-    animation = Tween(begin: 0.0, end: 1.0).animate(controller);
-    // colorAnimation = ColorTween(
-    //   begin: Colors.red,
-    //   end: Colors.green,
-    // ).animate(controller);
-    controller.addListener(() {
-      setState(() {});
-    });
-
-    controller.forward();
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(home: MyHomePage(), debugShowCheckedModeBanner: false);
   }
+}
+
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // body: Center(
-      //   child: Container(
-      //     width: animation.value,
-      //     height: animation.value,
-      //     color: colorAnimation.value
-      //   ),
-      // ),
-
-      //ripple animation
-      body: Center(
-        child: Stack(
-          alignment: Alignment.center,
-          children: RadiusList.map(
-            (radius) => Container(
-              width: radius * animation.value,
-              height: radius * animation.value,
-              decoration: BoxDecoration(
-                color: Colors.blue.withOpacity(1.0 - animation.value),
-                shape: BoxShape.circle,
-              ),
-            ),
-          ).toList(),
-        ),
+      body: LayoutBuilder(
+        builder: (context, Constraints) {
+          if (Constraints.maxWidth < 600) {
+            return Text("mobile");
+          } else if (Constraints.maxWidth < 1200) {
+            return Text("Tablet");
+          } else {
+            return Text("Web");
+          }
+          
+        },
       ),
     );
+  }
+
+  void mobileUI() {
+    Text("MobileUI");
+  }
+
+  void TabletUI() {
+    Text("MobileUI");
+  }
+
+  void WebUI() {
+    Text("MobileUI");
   }
 }
