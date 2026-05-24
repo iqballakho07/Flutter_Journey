@@ -1664,35 +1664,131 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
-
   @override
   Widget build(BuildContext context) {
+
+    // ---------------- MEDIA QUERY ----------------
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
+    bool isDesktop = screenWidth > 900;
+    bool isTablet = screenWidth > 600 && screenWidth <= 900;
+    bool isMobile = screenWidth <= 600;
+
     return Scaffold(
-      body: LayoutBuilder(
-        builder: (context, Constraints) {
-          if (Constraints.maxWidth < 600) {
-            return Text("mobile");
-          } else if (Constraints.maxWidth < 1200) {
-            return Text("Tablet");
-          } else {
-            return Text("Web");
-          }
-          
-        },
+      appBar: AppBar(
+        title: Text("MediaQuery & LayoutBuilder"),
+        centerTitle: true,
+      ),
+
+      body: Column(
+        children: [
+
+          // ---------------- SCREEN INFO ----------------
+          Container(
+            width: double.infinity,
+            padding: EdgeInsets.all(16),
+            color: Colors.blue.shade100,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Screen Width : $screenWidth",
+                  style: TextStyle(fontSize: 18),
+                ),
+                Text(
+                  "Screen Height : $screenHeight",
+                  style: TextStyle(fontSize: 18),
+                ),
+
+                SizedBox(height: 10),
+
+                if (isDesktop)
+                  Text(
+                    "Desktop Layout",
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+
+                if (isTablet)
+                  Text(
+                    "Tablet Layout",
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+
+                if (isMobile)
+                  Text(
+                    "Mobile Layout",
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+              ],
+            ),
+          ),
+
+          SizedBox(height: 20),
+
+          // ---------------- LAYOUT BUILDER ----------------
+          Expanded(
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+
+                // Width available inside parent
+                double width = constraints.maxWidth;
+
+                int crossAxisCount = 1;
+
+                if (width > 900) {
+                  crossAxisCount = 4;
+                } else if (width > 600) {
+                  crossAxisCount = 2;
+                } else {
+                  crossAxisCount = 1;
+                }
+
+                return GridView.builder(
+                  padding: EdgeInsets.all(16),
+                  itemCount: 8,
+
+                  gridDelegate:
+                      SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: crossAxisCount,
+                    crossAxisSpacing: 16,
+                    mainAxisSpacing: 16,
+                    childAspectRatio: 1.2,
+                  ),
+
+                  itemBuilder: (context, index) {
+                    return Container(
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+
+                      child: Center(
+                        child: Text(
+                          "Card ${index + 1}",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 24,
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
-  }
-
-  void mobileUI() {
-    Text("MobileUI");
-  }
-
-  void TabletUI() {
-    Text("MobileUI");
-  }
-
-  void WebUI() {
-    Text("MobileUI");
   }
 }
