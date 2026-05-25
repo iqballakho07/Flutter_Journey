@@ -1796,60 +1796,101 @@ class MyApp extends StatelessWidget {
 
 //Bottom Navigation Bar
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+// class MyHomePage extends StatefulWidget {
+//   const MyHomePage({super.key});
 
-  @override
-  State<MyHomePage> createState() => _HomeScreenState();
-}
+//   @override
+//   State<MyHomePage> createState() => _HomeScreenState();
+// }
 
-class _HomeScreenState extends State<MyHomePage> {
+// class _HomeScreenState extends State<MyHomePage> {
 
-  int selectedIndex = 0;
+//   int selectedIndex = 0;
 
-  List<Widget> screens = [
-    Center(child: Text("Home")),
-    Center(child: Text("Search")),
-    Center(child: Text("Profile")),
-  ];
+//   List<Widget> screens = [
+//     Center(child: Text("Home")),
+//     Center(child: Text("Search")),
+//     Center(child: Text("Profile")),
+//   ];
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
 
-      body: screens[selectedIndex],
+//       body: screens[selectedIndex],
 
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed, 
-        unselectedItemColor: Colors.blueGrey,
-        selectedItemColor: Colors.blue,
-        currentIndex: selectedIndex,
-        elevation: 10.0,
-        backgroundColor: Colors.blue.shade50,
+//       bottomNavigationBar: BottomNavigationBar(
+//         type: BottomNavigationBarType.fixed, 
+//         unselectedItemColor: Colors.blueGrey,
+//         selectedItemColor: Colors.blue,
+//         currentIndex: selectedIndex,
+//         elevation: 10.0,
+//         backgroundColor: Colors.blue.shade50,
         
 
-        onTap: (index) {
-          setState(() {
-            selectedIndex = index;
-          });
-        },
+//         onTap: (index) {
+//           setState(() {
+//             selectedIndex = index;
+//           });
+//         },
 
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: "Home",
-          ),
+//         items: const [
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.home),
+//             label: "Home",
+//           ),
 
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: "Search",
-          ),
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.search),
+//             label: "Search",
+//           ),
 
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: "Profile",
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.person),
+//             label: "Profile",
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
+
+//TabBar 
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+
+    return DefaultTabController(
+      length: 3,
+
+      child: Scaffold(
+
+        appBar: AppBar(
+          title: Text("TabBar Example"),
+
+          bottom: TabBar(
+            dividerHeight: 6.0,
+            dividerColor: Colors.blueGrey,
+            indicatorColor: Colors.blue,
+            labelColor: Colors.green,
+            unselectedLabelColor: Colors.lightGreen.shade100,
+           
+            tabs: [
+              Tab(icon: Icon(Icons.chat), text: "Chats"),
+              Tab(icon: Icon(Icons.update), text: "Status"),
+              Tab(icon: Icon(Icons.call), text: "Calls"),
+            ],
           ),
-        ],
+        ),
+
+        body: TabBarView(
+          children: [
+            Center(child: Text("Chats Screen")),
+            Center(child: Text("Status Screen")),
+            Center(child: Text("Calls Screen")),
+          ],
+        ),
       ),
     );
   }
