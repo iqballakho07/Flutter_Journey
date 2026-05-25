@@ -1857,38 +1857,159 @@ class MyApp extends StatelessWidget {
 
 //TabBar 
 
+// class MyHomePage extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+
+//     return DefaultTabController(
+//       length: 3,
+
+//       child: Scaffold(
+
+//         appBar: AppBar(
+//           title: Text("TabBar Example"),
+
+//           bottom: TabBar(
+//             dividerHeight: 6.0,
+//             dividerColor: Colors.blueGrey,
+//             indicatorColor: Colors.blue,
+//             labelColor: Colors.green,
+//             unselectedLabelColor: Colors.lightGreen.shade100,
+           
+//             tabs: [
+//               Tab(icon: Icon(Icons.chat), text: "Chats"),
+//               Tab(icon: Icon(Icons.update), text: "Status"),
+//               Tab(icon: Icon(Icons.call), text: "Calls"),
+//             ],
+//           ),
+//         ),
+
+//         body: TabBarView(
+//           children: [
+//             Center(child: Text("Chats Screen")),
+//             Center(child: Text("Status Screen")),
+//             Center(child: Text("Calls Screen")),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+
 class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
-
     return DefaultTabController(
       length: 3,
 
       child: Scaffold(
+        backgroundColor: Colors.grey.shade100,
 
         appBar: AppBar(
-          title: Text("TabBar Example"),
+          elevation: 0,
+          backgroundColor: Colors.white,
+          centerTitle: true,
 
-          bottom: TabBar(
-            dividerHeight: 6.0,
-            dividerColor: Colors.blueGrey,
-            indicatorColor: Colors.blue,
-            labelColor: Colors.green,
-            unselectedLabelColor: Colors.lightGreen.shade100,
-           
-            tabs: [
-              Tab(icon: Icon(Icons.chat), text: "Chats"),
-              Tab(icon: Icon(Icons.update), text: "Status"),
-              Tab(icon: Icon(Icons.call), text: "Calls"),
-            ],
+          title: const Text(
+            "Modern TabBar",
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+
+          bottom: PreferredSize(
+            preferredSize: const Size.fromHeight(70),
+
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
+
+              child: Container(
+                height: 50,
+
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade200,
+                  borderRadius: BorderRadius.circular(30),
+                ),
+
+                child: TabBar(
+                  indicator: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(30),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.blue.withOpacity(0.3),
+                        blurRadius: 8,
+                        offset: const Offset(0, 3),
+                      )
+                    ],
+                  ),
+
+                  labelColor: Colors.white,
+                  unselectedLabelColor: Colors.black54,
+
+                  indicatorSize: TabBarIndicatorSize.tab,
+
+                  dividerColor: Colors.transparent,
+
+                  tabs: const [
+
+                    Tab(
+                      icon: Icon(Icons.home),
+                      text: "Home",
+                    ),
+
+                    Tab(
+                      icon: Icon(Icons.favorite),
+                      text: "Likes",
+                    ),
+
+                    Tab(
+                      icon: Icon(Icons.person),
+                      text: "Profile",
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ),
         ),
 
-        body: TabBarView(
+        body: const TabBarView(
           children: [
-            Center(child: Text("Chats Screen")),
-            Center(child: Text("Status Screen")),
-            Center(child: Text("Calls Screen")),
+
+            Center(
+              child: Text(
+                "Home Screen",
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            Center(
+              child: Text(
+                "Likes Screen",
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            Center(
+              child: Text(
+                "Profile Screen",
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
           ],
         ),
       ),
