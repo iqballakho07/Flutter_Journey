@@ -1663,129 +1663,191 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+// class MyHomePage extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+
+//     // ---------------- MEDIA QUERY ----------------
+//     double screenWidth = MediaQuery.of(context).size.width;
+//     double screenHeight = MediaQuery.of(context).size.height;
+
+//     bool isDesktop = screenWidth > 900;
+//     bool isTablet = screenWidth > 600 && screenWidth <= 900;
+//     bool isMobile = screenWidth <= 600;
+
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text("MediaQuery & LayoutBuilder"),
+//         centerTitle: true,
+//       ),
+
+//       body: Column(
+//         children: [
+
+//           // ---------------- SCREEN INFO ----------------
+//           Container(
+//             width: double.infinity,
+//             padding: EdgeInsets.all(16),
+//             color: Colors.blue.shade100,
+//             child: Column(
+//               crossAxisAlignment: CrossAxisAlignment.start,
+//               children: [
+//                 Text(
+//                   "Screen Width : $screenWidth",
+//                   style: TextStyle(fontSize: 18),
+//                 ),
+//                 Text(
+//                   "Screen Height : $screenHeight",
+//                   style: TextStyle(fontSize: 18),
+//                 ),
+
+//                 SizedBox(height: 10),
+
+//                 if (isDesktop)
+//                   Text(
+//                     "Desktop Layout",
+//                     style: TextStyle(
+//                       fontSize: 22,
+//                       fontWeight: FontWeight.bold,
+//                     ),
+//                   ),
+
+//                 if (isTablet)
+//                   Text(
+//                     "Tablet Layout",
+//                     style: TextStyle(
+//                       fontSize: 22,
+//                       fontWeight: FontWeight.bold,
+//                     ),
+//                   ),
+
+//                 if (isMobile)
+//                   Text(
+//                     "Mobile Layout",
+//                     style: TextStyle(
+//                       fontSize: 22,
+//                       fontWeight: FontWeight.bold,
+//                     ),
+//                   ),
+//               ],
+//             ),
+//           ),
+
+//           SizedBox(height: 20),
+
+//           // ---------------- LAYOUT BUILDER ----------------
+//           Expanded(
+//             child: LayoutBuilder(
+//               builder: (context, constraints) {
+
+//                 // Width available inside parent
+//                 double width = constraints.maxWidth;
+
+//                 int crossAxisCount = 1;
+
+//                 if (width > 900) {
+//                   crossAxisCount = 4;
+//                 } else if (width > 600) {
+//                   crossAxisCount = 2;
+//                 } else {
+//                   crossAxisCount = 1;
+//                 }
+
+//                 return GridView.builder(
+//                   padding: EdgeInsets.all(16),
+//                   itemCount: 8,
+
+//                   gridDelegate:
+//                       SliverGridDelegateWithMaxCrossAxisExtent(
+//                     maxCrossAxisExtent: 200,
+//                     crossAxisSpacing: 16,
+//                     mainAxisSpacing: 16,
+//                     childAspectRatio: 1.2,
+//                   ),
+
+//                   itemBuilder: (context, index) {
+//                     return Container(
+//                       decoration: BoxDecoration(
+//                         color: Colors.blue,
+//                         borderRadius: BorderRadius.circular(20),
+//                       ),
+
+//                       child: Center(
+//                         child: Text(
+//                           "Card ${index + 1}",
+//                           style: TextStyle(
+//                             color: Colors.white,
+//                             fontSize: 24,
+//                           ),
+//                         ),
+//                       ),
+//                     );
+//                   },
+//                 );
+//               },
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
+
+
+//Bottom Navigation Bar
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
+  @override
+  State<MyHomePage> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<MyHomePage> {
+
+  int selectedIndex = 0;
+
+  List<Widget> screens = [
+    Center(child: Text("Home")),
+    Center(child: Text("Search")),
+    Center(child: Text("Profile")),
+  ];
+
   @override
   Widget build(BuildContext context) {
-
-    // ---------------- MEDIA QUERY ----------------
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
-
-    bool isDesktop = screenWidth > 900;
-    bool isTablet = screenWidth > 600 && screenWidth <= 900;
-    bool isMobile = screenWidth <= 600;
-
     return Scaffold(
-      appBar: AppBar(
-        title: Text("MediaQuery & LayoutBuilder"),
-        centerTitle: true,
-      ),
 
-      body: Column(
-        children: [
+      body: screens[selectedIndex],
 
-          // ---------------- SCREEN INFO ----------------
-          Container(
-            width: double.infinity,
-            padding: EdgeInsets.all(16),
-            color: Colors.blue.shade100,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Screen Width : $screenWidth",
-                  style: TextStyle(fontSize: 18),
-                ),
-                Text(
-                  "Screen Height : $screenHeight",
-                  style: TextStyle(fontSize: 18),
-                ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed, 
+        unselectedItemColor: Colors.blueGrey,
+        selectedItemColor: Colors.blue,
+        currentIndex: selectedIndex,
+        elevation: 10.0,
+        backgroundColor: Colors.blue.shade50,
+        
 
-                SizedBox(height: 10),
+        onTap: (index) {
+          setState(() {
+            selectedIndex = index;
+          });
+        },
 
-                if (isDesktop)
-                  Text(
-                    "Desktop Layout",
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-
-                if (isTablet)
-                  Text(
-                    "Tablet Layout",
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-
-                if (isMobile)
-                  Text(
-                    "Mobile Layout",
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-              ],
-            ),
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: "Home",
           ),
 
-          SizedBox(height: 20),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: "Search",
+          ),
 
-          // ---------------- LAYOUT BUILDER ----------------
-          Expanded(
-            child: LayoutBuilder(
-              builder: (context, constraints) {
-
-                // Width available inside parent
-                double width = constraints.maxWidth;
-
-                int crossAxisCount = 1;
-
-                if (width > 900) {
-                  crossAxisCount = 4;
-                } else if (width > 600) {
-                  crossAxisCount = 2;
-                } else {
-                  crossAxisCount = 1;
-                }
-
-                return GridView.builder(
-                  padding: EdgeInsets.all(16),
-                  itemCount: 8,
-
-                  gridDelegate:
-                      SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: crossAxisCount,
-                    crossAxisSpacing: 16,
-                    mainAxisSpacing: 16,
-                    childAspectRatio: 1.2,
-                  ),
-
-                  itemBuilder: (context, index) {
-                    return Container(
-                      decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-
-                      child: Center(
-                        child: Text(
-                          "Card ${index + 1}",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 24,
-                          ),
-                        ),
-                      ),
-                    );
-                  },
-                );
-              },
-            ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: "Profile",
           ),
         ],
       ),
