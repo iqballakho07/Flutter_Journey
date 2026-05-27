@@ -1650,18 +1650,18 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 //   }
 // }
 
-void main() {
-  runApp(MyApp());
-}
+// void main() {
+//   runApp(MyApp());
+// }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(home: MyHomePage(), debugShowCheckedModeBanner: false);
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(home: MyHomePage(), debugShowCheckedModeBanner: false);
+//   }
+// }
 
 // class MyHomePage extends StatelessWidget {
 //   @override
@@ -1793,7 +1793,6 @@ class MyApp extends StatelessWidget {
 //   }
 // }
 
-
 //Bottom Navigation Bar
 
 // class MyHomePage extends StatefulWidget {
@@ -1820,13 +1819,12 @@ class MyApp extends StatelessWidget {
 //       body: screens[selectedIndex],
 
 //       bottomNavigationBar: BottomNavigationBar(
-//         type: BottomNavigationBarType.fixed, 
+//         type: BottomNavigationBarType.fixed,
 //         unselectedItemColor: Colors.blueGrey,
 //         selectedItemColor: Colors.blue,
 //         currentIndex: selectedIndex,
 //         elevation: 10.0,
 //         backgroundColor: Colors.blue.shade50,
-        
 
 //         onTap: (index) {
 //           setState(() {
@@ -1855,7 +1853,7 @@ class MyApp extends StatelessWidget {
 //   }
 // }
 
-//TabBar 
+//TabBar
 
 // class MyHomePage extends StatelessWidget {
 //   @override
@@ -1875,7 +1873,7 @@ class MyApp extends StatelessWidget {
 //             indicatorColor: Colors.blue,
 //             labelColor: Colors.green,
 //             unselectedLabelColor: Colors.lightGreen.shade100,
-           
+
 //             tabs: [
 //               Tab(icon: Icon(Icons.chat), text: "Chats"),
 //               Tab(icon: Icon(Icons.update), text: "Status"),
@@ -1896,121 +1894,163 @@ class MyApp extends StatelessWidget {
 //   }
 // }
 
+// class MyHomePage extends StatelessWidget {
+//   const MyHomePage({super.key});
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+//   @override
+//   Widget build(BuildContext context) {
+//     return DefaultTabController(
+//       length: 3,
 
+//       child: Scaffold(
+//         backgroundColor: Colors.grey.shade100,
+
+//         appBar: AppBar(
+//           elevation: 0,
+//           backgroundColor: Colors.white,
+//           centerTitle: true,
+
+//           title: const Text(
+//             "Modern TabBar",
+//             style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+//           ),
+
+//           bottom: PreferredSize(
+//             preferredSize: const Size.fromHeight(70),
+
+//             child: Padding(
+//               padding: const EdgeInsets.all(12.0),
+
+//               child: Container(
+//                 height: 50,
+
+//                 decoration: BoxDecoration(
+//                   color: Colors.grey.shade200,
+//                   borderRadius: BorderRadius.circular(30),
+//                 ),
+
+//                 child: TabBar(
+//                   indicator: BoxDecoration(
+//                     color: Colors.blue,
+//                     borderRadius: BorderRadius.circular(30),
+//                     boxShadow: [
+//                       BoxShadow(
+//                         color: Colors.blue.withValues(alpha: 0.3),
+//                         blurRadius: 8,
+//                         offset: const Offset(0, 3),
+//                       ),
+//                     ],
+//                   ),
+
+//                   labelColor: Colors.white,
+//                   unselectedLabelColor: Colors.black54,
+
+//                   indicatorSize: TabBarIndicatorSize.tab,
+
+//                   dividerColor: Colors.transparent,
+
+//                   tabs: const [
+//                     Tab(icon: Icon(Icons.home), text: "Home"),
+
+//                     Tab(icon: Icon(Icons.favorite), text: "Likes"),
+
+//                     Tab(icon: Icon(Icons.person), text: "Profile"),
+//                   ],
+//                 ),
+//               ),
+//             ),
+//           ),
+//         ),
+
+//         body: const TabBarView(
+//           children: [
+//             Center(
+//               child: Text(
+//                 "Home Screen",
+//                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+//               ),
+//             ),
+
+//             Center(
+//               child: Text(
+//                 "Likes Screen",
+//                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+//               ),
+//             ),
+
+//             Center(
+//               child: Text(
+//                 "Profile Screen",
+//                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 3,
+    return MaterialApp(
+      themeMode: ThemeMode.system,
 
-      child: Scaffold(
-        backgroundColor: Colors.grey.shade100,
+      theme: ThemeData(
+        useMaterial3: true,
 
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.white,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepPurple,
+          brightness: Brightness.light,
+        ),
+
+        appBarTheme: AppBarTheme(
           centerTitle: true,
+        ),
 
-          title: const Text(
-            "Modern TabBar",
-            style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-
-          bottom: PreferredSize(
-            preferredSize: const Size.fromHeight(70),
-
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-
-              child: Container(
-                height: 50,
-
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade200,
-                  borderRadius: BorderRadius.circular(30),
-                ),
-
-                child: TabBar(
-                  indicator: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(30),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.blue.withOpacity(0.3),
-                        blurRadius: 8,
-                        offset: const Offset(0, 3),
-                      )
-                    ],
-                  ),
-
-                  labelColor: Colors.white,
-                  unselectedLabelColor: Colors.black54,
-
-                  indicatorSize: TabBarIndicatorSize.tab,
-
-                  dividerColor: Colors.transparent,
-
-                  tabs: const [
-
-                    Tab(
-                      icon: Icon(Icons.home),
-                      text: "Home",
-                    ),
-
-                    Tab(
-                      icon: Icon(Icons.favorite),
-                      text: "Likes",
-                    ),
-
-                    Tab(
-                      icon: Icon(Icons.person),
-                      text: "Profile",
-                    ),
-                  ],
-                ),
-              ),
+        elevatedButtonTheme:
+            ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.blueGrey,
+            padding: EdgeInsets.symmetric(
+              horizontal: 30,
+              vertical: 15,
             ),
           ),
         ),
+      ),
 
-        body: const TabBarView(
-          children: [
+      darkTheme: ThemeData(
+        useMaterial3: true,
 
-            Center(
-              child: Text(
-                "Home Screen",
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepPurple,
+          brightness: Brightness.dark,
+        ),
+      ),
 
-            Center(
-              child: Text(
-                "Likes Screen",
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
+      home: HomePage(),
+    );
+  }
+}
 
-            Center(
-              child: Text(
-                "Profile Screen",
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ],
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Themes'),
+      ),
+
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {},
+          child: Text('Button'),
         ),
       ),
     );
