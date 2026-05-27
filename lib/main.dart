@@ -1991,67 +1991,108 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 //   }
 // }
 
+// void main() {
+//   runApp(MyApp());
+// }
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       themeMode: ThemeMode.system,
+
+//       theme: ThemeData(
+//         useMaterial3: true,
+
+//         colorScheme: ColorScheme.fromSeed(
+//           seedColor: Colors.deepPurple,
+//           brightness: Brightness.light,
+//         ),
+
+//         appBarTheme: AppBarTheme(
+//           centerTitle: true,
+//         ),
+
+//         elevatedButtonTheme:
+//             ElevatedButtonThemeData(
+//           style: ElevatedButton.styleFrom(
+//           backgroundColor: Colors.blueGrey,
+//             padding: EdgeInsets.symmetric(
+//               horizontal: 30,
+//               vertical: 15,
+//             ),
+//           ),
+//         ),
+//       ),
+
+//       darkTheme: ThemeData(
+//         useMaterial3: true,
+
+//         colorScheme: ColorScheme.fromSeed(
+//           seedColor: Colors.deepPurple,
+//           brightness: Brightness.dark,
+//         ),
+//       ),
+
+//       home: HomePage(),
+//     );
+//   }
+// }
+
+// class HomePage extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Themes'),
+//       ),
+
+//       body: Center(
+//         child: ElevatedButton(
+//           onPressed: () {},
+//           child: Text('Button'),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+import 'package:flutter/material.dart';
+
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      themeMode: ThemeMode.system,
-
-      theme: ThemeData(
-        useMaterial3: true,
-
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurple,
-          brightness: Brightness.light,
-        ),
-
-        appBarTheme: AppBarTheme(
-          centerTitle: true,
-        ),
-
-        elevatedButtonTheme:
-            ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.blueGrey,
-            padding: EdgeInsets.symmetric(
-              horizontal: 30,
-              vertical: 15,
-            ),
-          ),
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
 
       darkTheme: ThemeData(
-        useMaterial3: true,
-
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurple,
-          brightness: Brightness.dark,
-        ),
+        brightness: Brightness.dark,
+        scaffoldBackgroundColor: Colors.black,
+        appBarTheme: const AppBarTheme(backgroundColor: Colors.black),
+        textTheme: const TextTheme(bodyMedium: TextStyle(color: Colors.white)),
+        colorScheme: ColorScheme.dark(primary: Colors.deepPurple),
       ),
-
-      home: HomePage(),
+      themeMode: ThemeMode.dark,
+      home: const HomeScreen(),
     );
   }
 }
 
-class HomePage extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Themes'),
-      ),
-
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {},
-          child: Text('Button'),
-        ),
+      appBar: AppBar(title: const Text("Dark Theme Example")),
+      body: const Center(
+        child: Text("Hello Flutter", style: TextStyle(fontSize: 24)),
       ),
     );
   }
